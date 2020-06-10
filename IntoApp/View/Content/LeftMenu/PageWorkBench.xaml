@@ -1,0 +1,108 @@
+﻿<Page x:Class="IntoApp.View.Content.LeftMenu.PageWorkBench"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IntoApp.View.Content.LeftMenu"
+      xmlns:Controls="clr-namespace:Skin.WPF.Controls;assembly=Skin.WPF"
+      xmlns:Data="clr-namespace:IntoApp.ViewModel.ContentViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="890"
+      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+      Title="PageWorkBench">
+    <Page.DataContext>
+        <Data:PageWorkBenchViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              Background="#EEEEEE">
+            <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        Margin="0,20,0,0">
+                <Grid Margin="5,3,5,3" Height="30">
+                    <Controls:UseImageRadioButton
+                        Content="考勤" Foreground="#3B3E3E"
+                        ImageWidth="20" ImageHeight="20"
+                        GroupName="Menu"  
+                        ImageBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageHoverBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageIsCheckedBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                        Image="{StaticResource Icon_CheckOn}"
+                        ImageIsChecked="{StaticResource Icon_CheckOn}"
+                        HoverBackGroundColor="{StaticResource Into_MainThemeColor_grayHover3}"
+                        IsCheckedBackGroundColor="{StaticResource Transparency}"
+                        BorderBrush="{StaticResource Into_MainThemeColor_yellow}" Border_Thickness="0,0,3,0"
+                        />
+                </Grid>
+                <Grid Margin="5,3,5,3" Height="30">
+                    <Controls:UseImageRadioButton
+                        Content="审批" Foreground="#3B3E3E"
+                        ImageWidth="20" ImageHeight="20"
+                        GroupName="Menu" 
+                        ImageBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageHoverBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageIsCheckedBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                        Image="{StaticResource Icon_Approval}"
+                        ImageIsChecked="{StaticResource Icon_Approval}"
+                        HoverBackGroundColor="{StaticResource Into_MainThemeColor_grayHover3}"
+                        IsCheckedBackGroundColor="{StaticResource Transparency}"
+                        BorderBrush="{StaticResource Into_MainThemeColor_yellow}" Border_Thickness="0,0,3,0"
+                        />
+                </Grid>
+                <Grid Margin="5,3,5,3" Height="30">
+                    <Controls:UseImageRadioButton
+                        Content="汇报" Foreground="#3B3E3E"
+                        ImageWidth="20" ImageHeight="20"
+                        GroupName="Menu"  
+                        ImageBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageHoverBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageIsCheckedBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                        Image="{StaticResource Icon_Report}"
+                        ImageIsChecked="{StaticResource Icon_Report}"
+                        HoverBackGroundColor="{StaticResource Into_MainThemeColor_grayHover3}"
+                        IsCheckedBackGroundColor="{StaticResource Transparency}"
+                        BorderBrush="{StaticResource Into_MainThemeColor_yellow}" Border_Thickness="0,0,3,0"
+                        />
+                </Grid>
+                <Grid Margin="5,3,5,3" Height="30">
+                    <Controls:UseImageRadioButton
+                        Content="公告" Foreground="#3B3E3E"
+                        ImageWidth="20" ImageHeight="20"
+                        GroupName="Menu" 
+                        ImageBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageHoverBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        ImageIsCheckedBrush="{StaticResource Into_MainThemeColor_yellow}"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                        Image="{StaticResource Icon_Notice}"
+                        ImageMouseOver="{StaticResource Icon_Notice}"
+                        ImageIsChecked="{StaticResource Icon_Notice}"
+                        HoverBackGroundColor="{StaticResource Into_MainThemeColor_grayHover3}"
+                        IsCheckedBackGroundColor="{StaticResource Transparency}"
+                        BorderBrush="{StaticResource Into_MainThemeColor_yellow}" Border_Thickness="0,0,3,0"
+                        />
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              Margin="5">
+            <Frame Margin="0,20,0,0"
+                    x:Name="Frame"
+                    Content="{Binding CurrentPage}"
+                    NavigationUIVisibility="Hidden"/>
+
+        </Grid>
+    </Grid>
+</Page>

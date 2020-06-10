@@ -1,0 +1,76 @@
+﻿<Page x:Class="IntoApp.View.Content.Server.PageTrayHistory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IntoApp.View.Content.Server"
+      xmlns:Data="clr-namespace:IntoApp.ViewModel.ContentViewModel.ServerViewModel"
+      xmlns:Controls="clr-namespace:Skin.WPF.Controls;assembly=Skin.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageTrayHistory">
+    <Page.DataContext>
+        <Binding Path="page_TrayHistory" Source="{StaticResource Locator}"/>
+    </Page.DataContext>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../../Style/PageTrayStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Center"
+                           Margin="0,0,20,0">
+                    <TextBlock Width="20"/>
+                    <Controls:UseButton
+                        Width="auto"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Command="{Binding BackToTrayCommand}">
+                        <WrapPanel>
+                            <Controls:UseImage 
+                                Image="{StaticResource Icon_ArrowLeft}"
+                                ImageHeight="20" ImageWidth="12" ImageBrush="{StaticResource Text_Color}"/>
+                            <Label Content="返回" FontSize="15"/>
+                        </WrapPanel>
+                    </Controls:UseButton>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RadioButton Style="{DynamicResource TopRadioButtonLeft_tray}"
+                                 Width="70"
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                 Content="已上传" Foreground="{DynamicResource Text_Color}"
+                                 IsChecked="{Binding SelectMenu,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Uploaded}"
+                                 GroupName="TrayHistory"/>
+                    <RadioButton Style="{DynamicResource TopRadioButtonItem_tray}"
+                                 Width="70"
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                 Content="已下载" Foreground="{DynamicResource Text_Color}"
+                                 IsChecked="{Binding SelectMenu,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Downloaded}"
+                                 GroupName="TrayHistory"/>
+                    <RadioButton Style="{DynamicResource TopRadioButtonRight_tray}"
+                                 Width="70"
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                 Content="未下载" Foreground="{DynamicResource Text_Color}"
+                                 IsChecked="{Binding SelectMenu,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=UnDownload}"
+                                 GroupName="TrayHistory"/>
+                </WrapPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Frame 
+                    x:Name="Frame"
+                    NavigationUIVisibility="Hidden"
+                    Content="{Binding CurrentPage}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

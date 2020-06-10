@@ -1,0 +1,66 @@
+﻿<Skin:SkinSimpleWindow
+        x:Class="IntoApp.Printer.AppPrinterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Skin="clr-namespace:Skin.WPF;assembly=Skin.WPF"
+        xmlns:Controls="clr-namespace:Skin.WPF.Controls;assembly=Skin.WPF"
+        xmlns:local="clr-namespace:IntoApp.Printer.ViewModel"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        mc:Ignorable="d" 
+        WindowStyle="None"
+        WindowShadowColor="#888888"
+        WindowShadowSize="10"
+        ShowInTaskbar="False"
+        Background="#F1F3F4" Opacity="0.8"
+        Foreground="#FFFFFF"
+        Title="" Height="80" Width="250">
+    <Window.DataContext>
+        <local:AppPrinterWindowModel/>
+    </Window.DataContext>
+    <i:Interaction.Triggers>
+        <!--<i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>-->
+        <!--<i:EventTrigger EventName="MouseMove">
+            <cmd:MyEventCommand Command="{Binding MouseMoveCommand}"/>
+        </i:EventTrigger>-->
+    </i:Interaction.Triggers>
+    <Grid>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                    Margin="5">
+            <!--#region-->
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel Grid.Column="1" HorizontalAlignment="Center"
+                           VerticalAlignment="Center">
+                </WrapPanel>
+            </Grid>-->
+            <!--#endregion-->
+            <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                       Margin="5,5,15,5">
+                <Controls:UseImage
+                    Image="M837.647389 0H185.70341C83.146214 0 0.001184 83.132039 0.001184 185.702226v651.918995c0 102.557196 83.14503 185.702226 185.702226 185.702226h651.943979c102.557196 0 185.677243-83.14503 185.677243-185.702226v-651.918995c0-102.569188-83.120047-185.702226-185.677243-185.702226zM616.344699 779.909376c0 13.865833-6.394772 25.096408-17.088702 30.05513a27.275967 27.275967 0 0 1-11.593335 2.561307c-7.619962 0-15.465775-3.034993-22.411183-8.906112l-162.466588-137.459122H263.725827c-22.984804 0-41.672449-18.700636-41.672449-41.68544V400.210408c0-22.971813 18.687645-41.672449 41.672449-41.672449h127.016026c5.746201 0 16.415147-3.935398 20.787257-7.669929l153.722369-131.06335c10.568013-9.019037 23.259622-11.442435 33.977536-6.495706 10.718913 4.94673 17.113686 16.189297 17.114685 30.05513v536.545272z m60.309128-393.590784l61.759169-61.759169c8.494384-8.469401 22.409185-8.469401 30.877586 0 8.519368 8.507375 8.519368 22.3862 0 30.892576l-61.732187 61.747177c-8.520367 8.507375-22.3862 8.507375-30.904568 0-8.469401-8.469401-8.469401-22.3852 0-30.880584z m92.638754 282.951931c-8.4704 8.481393-22.384201 8.481393-30.878586 0l-61.759169-61.77216c-8.471399-8.4704-8.471399-22.373208 0-30.867593 8.517369-8.481393 22.383202-8.481393 30.904568 0l61.733187 61.759169c8.494384 8.495383 8.494384 22.373208 0 30.880584z m10.168277-156.74637h-87.342255c-11.992072 0-21.81058-9.806517-21.810581-21.809581 0-12.017055 9.818509-21.847556 21.810581-21.847555h87.342255c12.016056 0 21.835564 9.830501 21.835564 21.847555 0 12.004064-9.818509 21.809581-21.835564 21.809581z"
+                    ImageBrush="#EF2D2D"
+                    ImageHeight="30" ImageWidth="30"/>
+                <Label x:Name="Label" Content=""/>
+            </WrapPanel>
+        </StackPanel>
+        <!--<Canvas HorizontalAlignment="Right" VerticalAlignment="Top"
+                Height="auto" Width="auto" Margin="0,0,20,0">
+            <Controls:UseSystemCloseButton
+                Cursor="Hand" 
+                SystemButtonForeground="#3B3E3E"
+                SystemButtonSize="20"
+            ></Controls:UseSystemCloseButton>
+        </Canvas>-->
+    </Grid>
+</Skin:SkinSimpleWindow>

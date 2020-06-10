@@ -1,0 +1,251 @@
+﻿<Page x:Class="IntoApp.View.Content.Server.PageTray"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IntoApp.View.Content.Server"
+      xmlns:Controls="clr-namespace:Skin.WPF.Controls;assembly=Skin.WPF"
+      xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:controls="clr-namespace:IntoApp.Controls"
+      xmlns:Data="clr-namespace:IntoApp.ViewModel.ContentViewModel.ServerViewModel"
+      xmlns:cmd="clr-namespace:Skin.WPF.Command;assembly=Skin.WPF"
+      xmlns:UC="clr-namespace:IntoApp.UseControl"
+      mc:Ignorable="d"  AllowDrop="True" x:Name="pageTray"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="唉优盘">
+    <Page.DataContext>
+        <Binding Path="page_Tray" Source="{StaticResource Locator}"/>
+    </Page.DataContext>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../../Style/PageTrayStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Center"
+                           Margin="0,0,20,0">
+                    <TextBlock Width="20"></TextBlock>
+                    <!--传输记录-->
+                    <!--<Controls:UseButton
+                        Tag="TrayHistory"
+                        x:Name="TrayHistory"
+                        CornerRadius="5"
+                        Width="100" Height="30"
+                        Background="{DynamicResource Text_Color_White}"
+                        Command="{Binding NavToTrayHistoryCommand}">
+                        <WrapPanel >
+                            <Path Width="15"
+                                  Height="15"
+                                  Data="{StaticResource Icon_TrayHistory}"
+                                  Fill="{DynamicResource Text_Color}"
+                                  Stretch="Uniform"/>
+                            <TextBlock Width="5"/>
+                            <TextBlock Text="传输记录" Foreground="{DynamicResource Text_Color}"/>
+                        </WrapPanel>
+                    </Controls:UseButton>-->
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center"
+                       Margin="0,0,20,0">
+                    <Controls:UseButton 
+                    x:Name="Delete"
+                    CornerRadius="5"
+                    Width="80" Height="30"
+                    IsEnabled="{Binding IsEnabled}"
+                    Background="{DynamicResource ThemeColor_Red}"
+                    Command="{Binding DeleteCommand}">
+                        <Controls:UseButton.CommandParameter>
+                            <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                <Binding ElementName="DataGrid"/>
+                            </MultiBinding>
+                        </Controls:UseButton.CommandParameter>
+                        <Label VerticalAlignment="Center" 
+                           Content="一键删除"
+                           Foreground="{DynamicResource Text_Color_White}" FontSize="12"/>
+                    </Controls:UseButton>
+                    <TextBlock Width="10"/>
+                    <!--传送-->
+                    <!--<Controls:UseButton 
+                    x:Name="Upload"
+                    CornerRadius="5"
+                    Width="80" Height="30"
+                    IsEnabled="{Binding IsEnabled}"
+                    Background="{DynamicResource ThemeColor1}"
+                    Command="{Binding UploadCommand}">
+                        <Label VerticalAlignment="Center" 
+                        Content="传送"
+                        Foreground="{DynamicResource Text_Color_White}" FontSize="12"/>
+                    </Controls:UseButton>-->
+                    <TextBlock Width="10"/>
+
+                    <Controls:UseButton
+                    x:Name="NewFolder"
+                    CornerRadius="5"
+                    Width="80" Height="30"
+                    IsEnabled="{Binding IsEnabled}"
+                    BorderThickness="1"
+                    BorderBrush="{DynamicResource Text_Color}"
+                    Background="{DynamicResource Text_Color_White}"
+                    Command="{Binding PrinterCommand}">
+                        <WrapPanel >
+                            <Path Width="15"
+                              Height="15"
+                              Data="{StaticResource Icon_FileUpload}"
+                              Fill="{DynamicResource Text_Color}"
+                              Stretch="Uniform"/>
+                            <TextBlock Width="5"/>
+                            <TextBlock Text="打印" Foreground="{DynamicResource Text_Color}"/>
+                        </WrapPanel>
+
+                    </Controls:UseButton>
+                </WrapPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <DataGrid AlternationCount="2" x:Name="DataGrid"
+                      IsHitTestVisible="True"
+                      AutoGenerateColumns="False"
+                      BorderThickness="0"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserReorderColumns="False"
+                      CanUserResizeColumns="False"
+                      CanUserResizeRows="False"
+                      GridLinesVisibility="None"
+                      HeadersVisibility="Column"
+                      IsReadOnly="False"
+                      AllowDrop="True"
+                      ItemsSource="{Binding LocalTray}"
+                      SelectionMode="Single">
+                    <i:Interaction.Triggers>
+                        <!--<i:EventTrigger EventName="MouseLeftButtonDown" >
+                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding ElementName=DataGrid}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding ElementName=DataGrid}"/>
+                    </i:EventTrigger>-->
+                        <i:EventTrigger EventName="Drop">
+                            <cmd:ExInvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=DataGrid}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="3*">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate >
+                                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           Margin="5">
+                                        <TextBlock Width="20"/>
+                                        <Controls:UseCheckBox
+                                        x:Name="CheckBoxSelectAll"
+                                        IsShowContent="True"
+                                        IsChecked="{Binding Path=DataContext.SelectAllIsChecked,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                        IconColor="{DynamicResource ThemeColor}"
+                                        Command="{Binding Path=DataContext.SelectAllCommand,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}">
+                                            <Controls:UseCheckBox.CommandParameter>
+                                                <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                                    <Binding RelativeSource="{x:Static RelativeSource.Self}"/>
+                                                </MultiBinding>
+                                            </Controls:UseCheckBox.CommandParameter>
+                                        </Controls:UseCheckBox>
+                                        <Label Content="文件名" Foreground="{DynamicResource Text_Color}" FontSize="12" ></Label>
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Height="30">
+                                        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                                       Margin="5">
+                                            <TextBlock Width="20"/>
+                                            <Controls:UseCheckBox
+                                            x:Name="CheckBox"
+                                            IsShowContent="True"
+                                            Tag="{Binding Index}"
+                                            IsChecked="{Binding IsChecked}"
+                                            IconColor="{DynamicResource ThemeColor}"
+                                            Command="{Binding Path=DataContext.CheckedCommand,RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                            >
+                                                <Controls:UseCheckBox.CommandParameter>
+                                                    <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                                        <Binding RelativeSource="{x:Static RelativeSource.Self}"/>
+                                                    </MultiBinding>
+                                                </Controls:UseCheckBox.CommandParameter>
+                                            </Controls:UseCheckBox>
+                                            <TextBlock Width="3"/>
+                                            <!--<Controls:UseImage
+                                            Image="{Binding Image}"
+                                            ImageBrush="#3B3E3E"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            ImageWidth="20" ImageHeight="20"/>
+                                            <TextBlock Width="10"/>-->
+                                            <TextBlock Text="{Binding FileNameCut}" Foreground="{DynamicResource Text_Color}" FontSize="12" TextWrapping="NoWrap"  TextTrimming="CharacterEllipsis"/>
+                                        </WrapPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="2*">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                        <TextBlock Text="创建时间" Foreground="{DynamicResource Text_Color}" FontSize="12"/>
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Height="30">
+                                        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                                               Margin="5">
+                                            <TextBlock Text="{Binding CreateTime}" Foreground="{DynamicResource Text_Color}" FontSize="12"/>
+                                        </WrapPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+            <Grid Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              Margin="5" Visibility="Hidden">
+                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" 
+                       Margin="5">
+                    <Controls:UseImageRadioButton
+                    x:Name="prev"
+                    Image="{StaticResource Icon_ArrowLeft}"
+                    ImageBrush="{DynamicResource Text_Color}"
+                    ImageMouseOver="{StaticResource Icon_ArrowLeft}"
+                    ImageHoverBrush="{DynamicResource Text_Color}"
+                    
+                    Content="上一页"/>
+                    <Controls:UseImageRadioButton
+                    x:Name="next"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Content="下一页"/>
+                </WrapPanel>
+            </Grid>
+
+        </Grid>
+        <UC:WaitingProgress RunState="{Binding RunState}" Text=""/>
+        <!--<UC:Empty IsShow="{Binding EmptyIsShow}"/>-->
+        <UC:Info IsShow="{Binding EmptyIsShow}" ImagePath="{StaticResource Icon_Drag}" Text="可将文件拖拽到此区域">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Drop">
+                    <cmd:ExInvokeCommandAction Command="{Binding DropCommand}" CommandParameter="{Binding ElementName=DataGrid}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </UC:Info>
+    </Grid>
+</Page>

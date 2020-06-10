@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:IntoApp.Style">
+    <SolidColorBrush x:Key="Into_ThemeColor" Color="#ffffff"></SolidColorBrush>
+    <SolidColorBrush x:Key="Transparency" Color="Transparent"></SolidColorBrush>
+    <SolidColorBrush x:Key="Into_ThemeColor2" Color="#C62F2F"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="Into_MainThemeColor_white">#FFFFFF</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Into_MainThemeColor_blue">#2196F3</SolidColorBrush>
+    <SolidColorBrush x:Key="Into_MainThemeColor_blue1">#83CBFF</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Into_MainThemeColor_grayText">#3B3E3E</SolidColorBrush>
+    <SolidColorBrush x:Key="Into_MainThemeColor_grayHover1">#686868</SolidColorBrush>
+    <SolidColorBrush x:Key="Into_MainThemeColor_grayHover2">#909090</SolidColorBrush>
+    <SolidColorBrush x:Key="Into_MainThemeColor_grayHover3">#C2C3C9</SolidColorBrush>
+    <SolidColorBrush x:Key="Into_MainThemeColor_grayHover4">#C6C9CC</SolidColorBrush>
+    <SolidColorBrush x:Key="Into_MainThemeColor_grayHover5">#E8E8EC</SolidColorBrush>
+    <SolidColorBrush x:Key="Into_MainThemeColor_background">#EEEEEE</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Into_MainThemeColor_green">#6CE26C</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Into_MainThemeColor_yellow">#FFA519</SolidColorBrush>
+
+
+</ResourceDictionary>

@@ -1,0 +1,162 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Skin.WPF.Controls"
+                    xmlns:utils="clr-namespace:Skin.WPF.utils">
+
+    <SolidColorBrush x:Key="Color_CheckBox">#3B3E3E</SolidColorBrush>
+
+    <!--Login账户输入框样式-->
+    <Style x:Key="Login_comboxBtn" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Background="Transparent" Margin="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <controls:UseImage
+                                   x:Name="Icon"
+                                   Width="28" Grid.Column="1"
+                                   Image="{DynamicResource Icon_path_right}"
+                                   HorizontalAlignment="Center"
+                                   ImageHeight="8" ImageWidth="19"
+                                   ImageBrush="{DynamicResource Color_CheckBox}"
+                                   Opacity="0.5"
+                                   VerticalAlignment="Center" />
+                            <!--<TextBlock x:Name="txt" Grid.Column="1"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Text="[1]" FontSize="20"
+                                       Foreground="#eeeeee"/>{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}-->
+                            <!--FontFamily="/ImageButtonTest01;component/Resources/#iconfont"-->
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Icon" Property="Image" Value="{DynamicResource Icon_path_down}"/>
+                            <Setter TargetName="Icon" Property="Width" Value="23"/>
+                            <Setter TargetName="Icon" Property="ImageHeight" Value="15" />
+                            <Setter TargetName="Icon" Property="ImageWidth" Value="8"/>
+                            <!--<Setter TargetName="txt" Property="Foreground" Value="#000000"/>-->
+                            <!--{StaticResource ComboToggleButton.Checked.Foreground}-->
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <!--<Setter TargetName="txt" Property="Foreground" Value="#000000"/>-->
+                            <!--{StaticResource ComboToggleButton.MouseMove.Foreground}-->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type controls:UseComboBox}">
+        <!--<Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="MinHeight" Value="25"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ComboBoxItem">
+                                <Border Name="Back" Background="Transparent" BorderThickness="0,1,0,1" BorderBrush="#ffffff">
+                                    <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Back" Property="Background" Value="#F5F5F5"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                </Style>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:UseComboBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding Path=(utils:ControlAttachProperty.CornerRadius).TopLeft, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ITBMLC}}"/>
+                            <ColumnDefinition  Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition  Width="Auto"/>
+                            <ColumnDefinition Width="{Binding Path=(utils:ControlAttachProperty.CornerRadius).TopLeft, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ITBMLC}}"/>
+                        </Grid.ColumnDefinitions>
+                        <!--<Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.3*" MaxWidth="30"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>-->
+                        <controls:WaterMarkTextBox Grid.Column="2" Text="{TemplateBinding Text}" MaxLength="{Binding Maxlength,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   utils:ControlAttachProperty.PlaceHolder="{TemplateBinding PlaceHolder}" CornerRadius="0" IconWidth="0"
+                                                   BorderThickness="{TemplateBinding BorderThickness}"
+                                                   BorderBrush="{TemplateBinding BorderBrush}" FontSize="18"/>
+                        <!--文字区域-->
+                        <!--<TextBox  Background="Transparent" Style="{DynamicResource UserName_style}" Text="{TemplateBinding Text}">
+                        </TextBox>-->
+                        <!--右侧下拉框设置-->
+
+                        <Border Grid.Column="3" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color_CheckBox}" CornerRadius="0">
+                            <ToggleButton IsTabStop="True" Focusable="False"
+                                          Style="{StaticResource Login_comboxBtn}" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"
+                                          BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                                          Background="{Binding Background,RelativeSource={RelativeSource TemplatedParent}}"></ToggleButton>
+                        </Border>
+                        <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide" >
+                            <!--弹出popup边框-->
+                            <Border CornerRadius="1" BorderBrush="#ffffff" BorderThickness="1,0,1,1" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                <!--设置Border阴影<Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="1"/>
+                                </Border.Effect>-->
+                                <!--下拉幕布边界背景设置 MaxHeight="{TemplateBinding MaxDropDownHeight}"-->
+                                <ScrollViewer Margin="0,0,0,0"   SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderBrush="#ffffff" BorderThickness="0" >
+                                    <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="#FFFFFF" Opacity="1">
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="Go_btn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Transparent">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Border>
+                        <TextBlock x:Name="Go_tb" Text="Go" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#000000"></TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#F37070"></Setter>
+                            <Setter TargetName="Go_tb" Property="Foreground" Value="#ffffff"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<path x:Key="Path1_left" d="M305.95680895 543.86419315c-12.01234468-12.01234468-23.16666475-28.31481246-19.73456629-43.75925565-2.57407386-15.44444316 9.43827083-30.03086171 19.73456626-42.04320639L679.19751882 86.53707047c18.87654164-18.87654164 49.76542799-18.87654164 68.64196959 0s18.87654164 49.76542799 0 68.64196963l-355.22219283 345.78392203L747.83948841 847.60490875c18.87654164 18.87654164 18.87654164 49.76542799 1e-8 68.64196962s-49.76542799 18.87654164-68.6419696-1e-8l-373.24070987-372.38268521z" fill="" p-id="2521"></path>
+
+    <path x:Key="Path2_down" d="M739.37652439 480.13580685c12.01234468 12.01234468 23.16666475 28.31481246 19.73456629 43.75925565 2.57407386 15.44444316-9.43827083 30.03086171-19.73456626 42.04320639L366.13581452 937.46292953c-18.87654164 18.87654164-49.76542799 18.87654164-68.64196959 0s-18.87654164-49.76542799 0-68.64196963l355.22219283-345.78392203L297.49384493 176.39509125c-18.87654164-18.87654164-18.87654164-49.76542799-1e-8-68.64196962s49.76542799-18.87654164 68.6419696 1e-8l373.24070987 372.38268521z" fill="" p-id="2079"></path>
+
+    <path x:Key="Path3_right" d="M561.873 725.165c-11.262 11.262-26.545 21.72-41.025 18.502-14.479 2.413-28.154-8.849-39.415-18.502L133.129 375.252c-17.697-17.696-17.697-46.655 0-64.352s46.655-17.696 64.351 0l324.173 333.021 324.977-333.02c17.696-17.697 46.655-17.697 64.351 0s17.697 46.655 0 64.351L561.873 725.165z" p-id="2213"></path>-->
+
+    <Geometry x:Key="Icon_path_right">M561.873 725.165c-11.262 11.262-26.545 21.72-41.025 18.502-14.479 2.413-28.154-8.849-39.415-18.502L133.129 375.252c-17.697-17.696-17.697-46.655 0-64.352s46.655-17.696 64.351 0l324.173 333.021 324.977-333.02c17.696-17.697 46.655-17.697 64.351 0s17.697 46.655 0 64.351L561.873 725.165z</Geometry>
+
+    <Geometry x:Key="Icon_path_down">M739.37652439 480.13580685c12.01234468 12.01234468 23.16666475 28.31481246 19.73456629 43.75925565 2.57407386 15.44444316-9.43827083 30.03086171-19.73456626 42.04320639L366.13581452 937.46292953c-18.87654164 18.87654164-49.76542799 18.87654164-68.64196959 0s-18.87654164-49.76542799 0-68.64196963l355.22219283-345.78392203L297.49384493 176.39509125c-18.87654164-18.87654164-18.87654164-49.76542799-1e-8-68.64196962s49.76542799-18.87654164 68.6419696 1e-8l373.24070987 372.38268521z</Geometry>
+</ResourceDictionary>

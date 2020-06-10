@@ -1,0 +1,1306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B5BA45F5-2972-4991-9AD3-449E451D68F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntoApp</RootNamespace>
+    <AssemblyName>IntoApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>IntoApp.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>intologo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bottles, Version=1.0.0.441, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bottles.1.0.0.441\lib\Bottles.dll</HintPath>
+    </Reference>
+    <Reference Include="DMSkin.Core">
+      <HintPath>..\..\..\..\IntoApp\IntoApp\IntoApp\bin\Debug\DMSkin.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DMSkin.WPF">
+      <HintPath>..\..\..\..\IntoApp\IntoApp\IntoApp\bin\Debug\DMSkin.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuCore.1.0.0.225\lib\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuLocalization, Version=0.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuLocalization.0.9.5.124\lib\FubuLocalization.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core, Version=1.0.0.1401, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Core.1.0.0.1401\lib\net40\FubuMVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.2.0.37223, Culture=neutral, PublicKeyToken=0e453835af4ee6ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.2.0.37224, Culture=neutral, PublicKeyToken=f46ff315b1088208, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTags, Version=1.1.0.114, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlTags.1.1.0.114\lib\4.0\HtmlTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\windows\IntoApp\IntoApp\AYUILibrary\Interop.SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="IntoApp.Dal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IntoApp.Dal\bin\Debug\IntoApp.Dal.dll</HintPath>
+    </Reference>
+    <Reference Include="Lierda.WPFHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cbb49eab16984ff2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lierda.WPFHelper.1.0.3\lib\net40\Lierda.WPFHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="M2Mqtt.Net">
+      <HintPath>D:\360MoveData\Users\comoco\Desktop\M2Mqtt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\windows\IntoApp\IntoApp\AYUILibrary\Microsoft.Expression.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\windows\IntoApp\IntoApp\AYUILibrary\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\windows\IntoApp\IntoApp\AYUILibrary\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="MoonPdfLib">
+      <HintPath>..\WPFPdfViewer\bin\Debug\MoonPdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MouseKeyboardActivityMonitor, Version=3.0.1.29653, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MouseKeyboardActivityMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Pipes, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pipes.2.3.0\lib\net40\Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="Skin.Core, Version=2.5.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Skin.WPF\bin\x86\Debug\Skin.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Skin.WPF, Version=2.5.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Skin.WPF\bin\x86\Debug\Skin.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="API\LoginPageManager.cs" />
+    <Compile Include="API\ContentPageManager.cs" />
+    <Compile Include="Command\CallCommand.cs" />
+    <Compile Include="Command\CustomCommandAction.cs" />
+    <Compile Include="Command\ExCommandParameter.cs" />
+    <Compile Include="Command\ExInvokeCommandAction.cs" />
+    <Compile Include="Command\IDefaultCommand.cs" />
+    <Compile Include="Command\MyCommand.cs" />
+    <Compile Include="Command\MyEventCommand.cs" />
+    <Compile Include="Command\RoutedEventTrigger.cs" />
+    <Compile Include="Common\Helper\DependencyObjectHelper.cs" />
+    <Compile Include="Common\Helper\FileCreateHelper.cs" />
+    <Compile Include="Common\Helper\FileOperationHelper.cs" />
+    <Compile Include="Common\Helper\GeometryHelper.cs" />
+    <Compile Include="Common\Helper\PortsHelper.cs" />
+    <Compile Include="Common\Helper\SubStringHelper.cs" />
+    <Compile Include="Common\Helper\XmlHelper.cs" />
+    <Compile Include="Common\Enum\FileEnum.cs" />
+    <Compile Include="Common\SavePath.cs" />
+    <Compile Include="Controls\Extensions\DataGridExtensions.cs" />
+    <Compile Include="Controls\Extensions\IsShowExtensions.cs" />
+    <Compile Include="Converters\BoolToVisiblityConverter.cs" />
+    <Compile Include="Converters\StringToObjectConverter.cs" />
+    <Compile Include="Model\AccountInfo.cs" />
+    <Compile Include="Controls\UseButton.cs" />
+    <Compile Include="Controls\IconButton.cs" />
+    <Compile Include="Controls\IconTextBlock.cs" />
+    <Compile Include="Controls\NumericBox.cs" />
+    <Compile Include="Controls\UseCheckBox.cs" />
+    <Compile Include="Controls\UseImage.cs" />
+    <Compile Include="Controls\UseLinkButton.cs" />
+    <Compile Include="Controls\UseScrollBar.cs" />
+    <Compile Include="Controls\UseScrollViewer.cs" />
+    <Compile Include="Controls\UseSystemButton.cs" />
+    <Compile Include="Controls\UseThumb.cs" />
+    <Compile Include="Controls\WaterMarkTextBox.cs" />
+    <Compile Include="Controls\ImageRadioButton.cs" />
+    <Compile Include="Converters\EnumToBooleanConverter.cs" />
+    <Compile Include="Converters\ImageTextBoxMarginLeftConverter.cs" />
+    <Compile Include="Converters\MultiBindingConverter.cs" />
+    <Compile Include="Converters\PlaceholderFontSizeConverter.cs" />
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Enum\Menu.cs" />
+    <Compile Include="Model\ModelHelper.cs" />
+    <Compile Include="Model\OrderDetail.cs" />
+    <Compile Include="Model\OrderList.cs" />
+    <Compile Include="Model\Tray.cs" />
+    <Compile Include="Model\TrayHistory.cs" />
+    <Compile Include="Model\UpdateModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="UseControl\DialogEx.cs" />
+    <Compile Include="UseControl\Empty.xaml.cs">
+      <DependentUpon>Empty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\ImageDealer.xaml.cs">
+      <DependentUpon>ImageDealer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\ImageDealerUnsafe.xaml.cs">
+      <DependentUpon>ImageDealerUnsafe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\Info.xaml.cs">
+      <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\NotifictionWindow.xaml.cs">
+      <DependentUpon>NotifictionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UseControl\WaitingProgress.xaml.cs">
+      <DependentUpon>WaitingProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="utils\BaseWindow.cs" />
+    <Compile Include="utils\ControlAttachProperty.cs" />
+    <Compile Include="utils\DataGridHelper.cs" />
+    <Compile Include="utils\DateTimeHelper.cs" />
+    <Compile Include="utils\LoginHelper.cs" />
+    <Compile Include="utils\M2MqttHelper.cs" />
+    <Compile Include="utils\NavigationService.cs" />
+    <Compile Include="utils\NotificationHelper.cs" />
+    <Compile Include="utils\OrderListHelper.cs" />
+    <Compile Include="utils\PasswordBoxHelper.cs" />
+    <Compile Include="utils\ProcessHelper.cs" />
+    <Compile Include="utils\TaryHelper.cs" />
+    <Compile Include="utils\TrayDownload.cs" />
+    <Compile Include="utils\UIHelper.cs" />
+    <Compile Include="utils\UpdateHelper.cs" />
+    <Compile Include="utils\UserInfoSave.cs" />
+    <Compile Include="utils\WHwndHelper.cs" />
+    <Compile Include="ViewModel\Base\LoginViewModelBase.cs" />
+    <Compile Include="ViewModel\Base\OrderDetailViewModelBase.cs" />
+    <Compile Include="ViewModel\Base\OrderListViewModelBase.cs" />
+    <Compile Include="ViewModel\Base\TrayHistroyViewModelBase.cs" />
+    <Compile Include="ViewModel\Base\TrayViewModelBase.cs" />
+    <Compile Include="ViewModel\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ContentViewModel\PageMineViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\PageServerViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\PageWorkBenchViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\OrderListViewModel\PageOrderListAllViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\OrderListViewModel\PageOrderListCompleteViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\OrderListViewModel\PageOrderListUnfinishedViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\OrderListViewModel\WinOrderListDetailViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\PageOrderListViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\PageTrayHistoryViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\PageTrayViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\ServerViewModel\WinFileUploadViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\WinFilePreviewViewModel.cs" />
+    <Compile Include="ViewModel\ContentViewModel\WinImageClippingViewModel.cs" />
+    <Compile Include="ViewModel\ContentWindowViewModel.cs" />
+    <Compile Include="ViewModel\InformUpdateViewModel.cs" />
+    <Compile Include="ViewModel\LoginWindowViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\Other\WinNotifiyViewModel.cs" />
+    <Compile Include="ViewModel\PageForgetPwdViewModel.cs" />
+    <Compile Include="ViewModel\PageLoginLoadingViewModel.cs" />
+    <Compile Include="ViewModel\PageLoginViewModel.cs" />
+    <Compile Include="ViewModel\PageRegisterViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\AutoUpdateInform.xaml.cs">
+      <DependentUpon>AutoUpdateInform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\LeftMenu\PageContacts.xaml.cs">
+      <DependentUpon>PageContacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\LeftMenu\PageMine.xaml.cs">
+      <DependentUpon>PageMine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\LeftMenu\PageServer.xaml.cs">
+      <DependentUpon>PageServer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\LeftMenu\PageWorkBench.xaml.cs">
+      <DependentUpon>PageWorkBench.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Mine\PageCollection.xaml.cs">
+      <DependentUpon>PageCollection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Other\FilePreView.xaml.cs">
+      <DependentUpon>FilePreView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\PageEmpty.xaml.cs">
+      <DependentUpon>PageEmpty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\LeftMenu\PageMessage.xaml.cs">
+      <DependentUpon>PageMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\OrderList\PageOrderListAll.xaml.cs">
+      <DependentUpon>PageOrderListAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\OrderList\PageOrderListComplete.xaml.cs">
+      <DependentUpon>PageOrderListComplete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\OrderList\PageOrderListUnfinished.xaml.cs">
+      <DependentUpon>PageOrderListUnfinished.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\OrderList\WinOrderListDetail.xaml.cs">
+      <DependentUpon>WinOrderListDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\PageOrderList.xaml.cs">
+      <DependentUpon>PageOrderList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\PageTray.xaml.cs">
+      <DependentUpon>PageTray.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\PageTrayHistory.xaml.cs">
+      <DependentUpon>PageTrayHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\TrayHistory\PageTrayDownloaded.xaml.cs">
+      <DependentUpon>PageTrayDownloaded.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\TrayHistory\PageTrayUnDownload.xaml.cs">
+      <DependentUpon>PageTrayUnDownload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\TrayHistory\PageTrayUploaded.xaml.cs">
+      <DependentUpon>PageTrayUploaded.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Server\WinFileUpload.xaml.cs">
+      <DependentUpon>WinFileUpload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Setting\WinAboutMe.xaml.cs">
+      <DependentUpon>WinAboutMe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\Setting\WinVersionInfo.xaml.cs">
+      <DependentUpon>WinVersionInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\WinImageClipping.xaml.cs">
+      <DependentUpon>WinImageClipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Content\WorkBench\PageApproval.xaml.cs">
+      <DependentUpon>PageApproval.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\PageForgetPwd.xaml.cs">
+      <DependentUpon>PageForgetPwd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\PageLogin.xaml.cs">
+      <DependentUpon>PageLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\PageLoginLoading.xaml.cs">
+      <DependentUpon>PageLoginLoading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\PageRegister.xaml.cs">
+      <DependentUpon>PageRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Contents\Language\en-us.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contents\Language\zh-cn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contents\Styles\AYUIProjectDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\MESSAGES.cs" />
+    <Compile Include="App_Start\SESSIONS.cs" />
+    <Compile Include="ContentWindow.xaml.cs">
+      <DependentUpon>ContentWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Style\Animation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Color.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\DMScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\DMSlider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\IconTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Image.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\LinkButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\NumericBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\PageTrayStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\PasswordTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Path.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\RadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\PageOrderListStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\WaterMarkTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\Empty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\ImageDealer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UseControl\ImageDealerUnsafe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\NotifictionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UseControl\WaitingProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AutoUpdateInform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\LeftMenu\PageContacts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\LeftMenu\PageMine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\LeftMenu\PageServer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\LeftMenu\PageWorkBench.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Mine\PageCollection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Other\FilePreView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\PageEmpty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\LeftMenu\PageMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\OrderList\PageOrderListAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\OrderList\PageOrderListComplete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\OrderList\PageOrderListUnfinished.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\OrderList\WinOrderListDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\PageOrderList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\PageTray.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\PageTrayHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\TrayHistory\PageTrayDownloaded.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\TrayHistory\PageTrayUnDownload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\TrayHistory\PageTrayUploaded.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Server\WinFileUpload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Setting\WinAboutMe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\Setting\WinVersionInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\WinImageClipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Content\WorkBench\PageApproval.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\PageForgetPwd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\PageLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\PageLoginLoading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\PageRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Contents\Font\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Resource Include="Contents\Font\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <None Include="Contents\Font\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <None Include="Contents\Font\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Resource Include="Contents\Font\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\animated.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\core.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\fixed-width.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\font-awesome.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\icons.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\larger.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\list.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\mixins.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\path.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\screen-reader.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\stacked.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\less\variables.less" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_animated.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_core.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_icons.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_larger.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_list.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_mixins.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_path.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_stacked.scss" />
+    <None Include="Contents\Font\font-awesome-4.7.0\scss\_variables.scss" />
+    <None Include="Contents\image\fastpass\.DS_Store" />
+    <None Include="Contents\image\MyDocument\.DS_Store" />
+    <None Include="Contents\image\Personal\.DS_Store" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="Filters\" />
+    <Folder Include="View\Content\Contacts\" />
+    <Folder Include="View\Content\Message\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Contents\image\Header\icon-headsculpture%402x.png" />
+    <Resource Include="Contents\image\Header\icon-headsculpture%403x.png" />
+    <Resource Include="Contents\image\Header\icon-headsculpture.png" />
+    <Resource Include="Contents\image\wallhaven-734918.jpg" />
+    <Resource Include="Contents\image\wallhaven-382944.jpg" />
+    <Resource Include="Contents\image\wallhaven-342867.png" />
+    <Resource Include="intologo.ico" />
+    <Resource Include="20190116150301.jpg" />
+    <Content Include="AYUILibrary\Ay.MvcFramework.Animation.dll" />
+    <Content Include="Contents\Font\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Contents\Font\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Contents\Font\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Resource Include="Contents\image\AddEquip\2%402x.png" />
+    <Resource Include="Contents\image\AddEquip\2%403x.png" />
+    <Resource Include="Contents\image\AddEquip\2.png" />
+    <Resource Include="Contents\image\AddEquip\3%402x.png" />
+    <Resource Include="Contents\image\AddEquip\3%403x.png" />
+    <Resource Include="Contents\image\AddEquip\3.png" />
+    <Resource Include="Contents\image\AddEquip\4%402x.png" />
+    <Resource Include="Contents\image\AddEquip\4%403x.png" />
+    <Resource Include="Contents\image\AddEquip\4.png" />
+    <Resource Include="Contents\image\AddEquip\5%402x.png" />
+    <Resource Include="Contents\image\AddEquip\5%403x.png" />
+    <Resource Include="Contents\image\AddEquip\5.png" />
+    <Resource Include="Contents\image\AddEquip\add%402x.png" />
+    <Resource Include="Contents\image\AddEquip\add%403x.png" />
+    <Resource Include="Contents\image\AddEquip\add.png" />
+    <Resource Include="Contents\image\AddEquip\button%402x.png" />
+    <Resource Include="Contents\image\AddEquip\button%403x.png" />
+    <Resource Include="Contents\image\AddEquip\button.png" />
+    <Resource Include="Contents\image\AddEquip\logo%402x.png" />
+    <Resource Include="Contents\image\AddEquip\logo%403x.png" />
+    <Resource Include="Contents\image\AddEquip\logo.png" />
+    <Resource Include="Contents\image\AddEquip\Newequipment_Newequipment_%403x.png" />
+    <Resource Include="Contents\image\AddEquip\Newequipment_Newequipment_%403x_01.png" />
+    <Resource Include="Contents\image\AddEquip\Newequipment_Newequipment_%403x_02.jpg" />
+    <Resource Include="Contents\image\AddEquip\Select%402x.png" />
+    <Resource Include="Contents\image\AddEquip\Select%403x.png" />
+    <Resource Include="Contents\image\AddEquip\Select.png" />
+    <Resource Include="Contents\image\AddEquip\titlebar%402x.png" />
+    <Resource Include="Contents\image\AddEquip\titlebar%403x.png" />
+    <Resource Include="Contents\image\AddEquip\titlebar.png" />
+    <Resource Include="Contents\image\AddEquip\示例项目_PC端-新增设备-改.png" />
+    <Resource Include="Contents\image\EditHeader\closebutton%402x.png" />
+    <Resource Include="Contents\image\EditHeader\closebutton%403x.png" />
+    <Resource Include="Contents\image\EditHeader\closebutton.png" />
+    <Resource Include="Contents\image\EditHeader\frame%402x.png" />
+    <Resource Include="Contents\image\EditHeader\frame%403x.png" />
+    <Resource Include="Contents\image\EditHeader\frame.png" />
+    <Resource Include="Contents\image\EditHeader\logo%402x.png" />
+    <Resource Include="Contents\image\EditHeader\logo%403x.png" />
+    <Resource Include="Contents\image\EditHeader\logo.png" />
+    <Resource Include="Contents\image\EditHeader\redframe%402x.png" />
+    <Resource Include="Contents\image\EditHeader\redframe%403x.png" />
+    <Resource Include="Contents\image\EditHeader\redframe.png" />
+    <Resource Include="Contents\image\EditHeader\示例项目_PC端-头像编辑.png" />
+    <Resource Include="Contents\image\EquipList\arrow-1%402x.png" />
+    <Resource Include="Contents\image\EquipList\arrow-1%403x.png" />
+    <Resource Include="Contents\image\EquipList\arrow-1.png" />
+    <Resource Include="Contents\image\EquipList\icon-location%402x.png" />
+    <Resource Include="Contents\image\EquipList\icon-location%403x.png" />
+    <Resource Include="Contents\image\EquipList\icon-location.png" />
+    <Resource Include="Contents\image\EquipList\lastpage-red%402x.png" />
+    <Resource Include="Contents\image\EquipList\lastpage-red%403x.png" />
+    <Resource Include="Contents\image\EquipList\lastpage-red.png" />
+    <Resource Include="Contents\image\EquipList\nextpaper-h%402x.png" />
+    <Resource Include="Contents\image\EquipList\nextpaper-h%403x.png" />
+    <Resource Include="Contents\image\EquipList\nextpaper-h.png" />
+    <Resource Include="Contents\image\EquipList\示例项目_PC端-设备中心-列表页-改.png" />
+    <Resource Include="Contents\image\EquipList\默认%402x.png" />
+    <Resource Include="Contents\image\EquipList\默认%403x.png" />
+    <Resource Include="Contents\image\EquipList\默认.png" />
+    <Resource Include="Contents\image\Equipment\1%402x.png" />
+    <Resource Include="Contents\image\Equipment\1%403x.png" />
+    <Resource Include="Contents\image\Equipment\1.png" />
+    <Resource Include="Contents\image\Equipment\2%402x.png" />
+    <Resource Include="Contents\image\Equipment\2%403x.png" />
+    <Resource Include="Contents\image\Equipment\2.png" />
+    <Resource Include="Contents\image\Equipment\3%402x.png" />
+    <Resource Include="Contents\image\Equipment\3%403x.png" />
+    <Resource Include="Contents\image\Equipment\3.png" />
+    <Resource Include="Contents\image\Equipment\addequipment%402x.png" />
+    <Resource Include="Contents\image\Equipment\addequipment%403x.png" />
+    <Resource Include="Contents\image\Equipment\addequipment.png" />
+    <Resource Include="Contents\image\Equipment\arrow-2%402x.png" />
+    <Resource Include="Contents\image\Equipment\arrow-2%403x.png" />
+    <Resource Include="Contents\image\Equipment\arrow-2.png" />
+    <Resource Include="Contents\image\Equipment\arrow-black%403x.png" />
+    <Resource Include="Contents\image\Equipment\arrow-black-left%403x.png" />
+    <Resource Include="Contents\image\Equipment\bottomborder副本%402x.png" />
+    <Resource Include="Contents\image\Equipment\bottomborder副本%403x.png" />
+    <Resource Include="Contents\image\Equipment\bottomborder副本.png" />
+    <Resource Include="Contents\image\Equipment\equipmentcenter%402x.png" />
+    <Resource Include="Contents\image\Equipment\equipmentcenter%403x.png" />
+    <Resource Include="Contents\image\Equipment\equipmentcenter.png" />
+    <Resource Include="Contents\image\Equipment\icon-accountnumber副本%402x.png" />
+    <Resource Include="Contents\image\Equipment\icon-accountnumber副本%403x.png" />
+    <Resource Include="Contents\image\Equipment\icon-accountnumber副本.png" />
+    <Resource Include="Contents\image\Equipment\icon-location%402x.png" />
+    <Resource Include="Contents\image\Equipment\icon-location%403x.png" />
+    <Resource Include="Contents\image\Equipment\icon-location.png" />
+    <Resource Include="Contents\image\Equipment\logophoto%402x.png" />
+    <Resource Include="Contents\image\Equipment\logophoto%403x.png" />
+    <Resource Include="Contents\image\Equipment\logophoto.png" />
+    <Resource Include="Contents\image\Equipment\Mobile%402x.png" />
+    <Resource Include="Contents\image\Equipment\Mobile%403x.png" />
+    <Resource Include="Contents\image\Equipment\Mobile.png" />
+    <Resource Include="Contents\image\Equipment\mydocument%402x.png" />
+    <Resource Include="Contents\image\Equipment\mydocument%403x.png" />
+    <Resource Include="Contents\image\Equipment\mydocument.png" />
+    <Resource Include="Contents\image\Equipment\personal%402x.png" />
+    <Resource Include="Contents\image\Equipment\personal%403x.png" />
+    <Resource Include="Contents\image\Equipment\personal.png" />
+    <Resource Include="Contents\image\Equipment\Window%402x.png" />
+    <Resource Include="Contents\image\Equipment\Window%403x.png" />
+    <Resource Include="Contents\image\Equipment\Window.png" />
+    <Resource Include="Contents\image\Equipment\write-displaystatus%402x.png" />
+    <Resource Include="Contents\image\Equipment\write-displaystatus%403x.png" />
+    <Resource Include="Contents\image\Equipment\write-displaystatus.png" />
+    <Resource Include="Contents\image\Equipment\圆角矩形2%402x.png" />
+    <Resource Include="Contents\image\Equipment\圆角矩形2%403x.png" />
+    <Resource Include="Contents\image\Equipment\圆角矩形2.png" />
+    <Resource Include="Contents\image\Equipment\矩形6副本2%402x.png" />
+    <Resource Include="Contents\image\Equipment\矩形6副本2%403x.png" />
+    <Resource Include="Contents\image\Equipment\矩形6副本2.png" />
+    <Resource Include="Contents\image\Equipment\示例项目_PC端-设备中心-彩印机-改.png" />
+    <Resource Include="Contents\image\fastpass\1%402x.png" />
+    <Resource Include="Contents\image\fastpass\1%403x.png" />
+    <Resource Include="Contents\image\fastpass\1.png" />
+    <Resource Include="Contents\image\fastpass\2%402x.png" />
+    <Resource Include="Contents\image\fastpass\2%403x.png" />
+    <Resource Include="Contents\image\fastpass\2.png" />
+    <Resource Include="Contents\image\fastpass\excel%402x.png" />
+    <Resource Include="Contents\image\fastpass\excel%403x.png" />
+    <Resource Include="Contents\image\fastpass\excel.png" />
+    <Resource Include="Contents\image\fastpass\fastpass%402x.png" />
+    <Resource Include="Contents\image\fastpass\fastpass%403x.png" />
+    <Resource Include="Contents\image\fastpass\fastpass.png" />
+    <Resource Include="Contents\image\fastpass\icon-add%402x.png" />
+    <Resource Include="Contents\image\fastpass\icon-add%403x.png" />
+    <Resource Include="Contents\image\fastpass\icon-add.png" />
+    <Resource Include="Contents\image\fastpass\icon-button%402x.png" />
+    <Resource Include="Contents\image\fastpass\icon-button%403x.png" />
+    <Resource Include="Contents\image\fastpass\icon-button.png" />
+    <Resource Include="Contents\image\fastpass\pdf%402x.png" />
+    <Resource Include="Contents\image\fastpass\pdf%403x.png" />
+    <Resource Include="Contents\image\fastpass\pdf.png" />
+    <Resource Include="Contents\image\fastpass\photo%402x.png" />
+    <Resource Include="Contents\image\fastpass\photo%403x.png" />
+    <Resource Include="Contents\image\fastpass\photo.png" />
+    <Resource Include="Contents\image\fastpass\ppt%402x.png" />
+    <Resource Include="Contents\image\fastpass\ppt%403x.png" />
+    <Resource Include="Contents\image\fastpass\ppt.png" />
+    <Resource Include="Contents\image\fastpass\redline%402x.png" />
+    <Resource Include="Contents\image\fastpass\redline%403x.png" />
+    <Resource Include="Contents\image\fastpass\redline.png" />
+    <Resource Include="Contents\image\fastpass\txt%402x.png" />
+    <Resource Include="Contents\image\fastpass\txt%403x.png" />
+    <Resource Include="Contents\image\fastpass\txt.png" />
+    <Resource Include="Contents\image\fastpass\word%402x.png" />
+    <Resource Include="Contents\image\fastpass\word%403x.png" />
+    <Resource Include="Contents\image\fastpass\word.png" />
+    <Resource Include="Contents\image\fastpass\示例项目_PC端-我的文档-快传.png" />
+    <Resource Include="Contents\image\IntoApp.ico" />
+    <Resource Include="Contents\image\ForgetPwd\frame1%402x.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame1%403x.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame1.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame2%402x.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame2%403x.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame2.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame3%402x.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame3%403x.png" />
+    <Resource Include="Contents\image\ForgetPwd\frame3.png" />
+    <Resource Include="Contents\image\ForgetPwd\login%402x.png" />
+    <Resource Include="Contents\image\ForgetPwd\login%403x.png" />
+    <Resource Include="Contents\image\ForgetPwd\login.png" />
+    <Resource Include="Contents\image\ForgetPwd\red-frame%402x.png" />
+    <Resource Include="Contents\image\ForgetPwd\red-frame%403x.png" />
+    <Resource Include="Contents\image\ForgetPwd\red-frame.png" />
+    <Resource Include="Contents\image\ForgetPwd\vision-m%402x.png" />
+    <Resource Include="Contents\image\ForgetPwd\vision-m%403x.png" />
+    <Resource Include="Contents\image\ForgetPwd\vision-m.png" />
+    <Resource Include="Contents\image\ForgetPwd\示例项目_登录页小-忘记密码.png" />
+    <Resource Include="Contents\image\imagetop%403x.png" />
+    <Resource Include="Contents\image\Login\background%402x.png" />
+    <Resource Include="Contents\image\Login\background%403x.png" />
+    <Resource Include="Contents\image\Login\background.png" />
+    <Resource Include="Contents\image\Login\checkedstate+%402x.png" />
+    <Resource Include="Contents\image\Login\checkedstate+%403x.png" />
+    <Resource Include="Contents\image\Login\checkedstate+.png" />
+    <Resource Include="Contents\image\Login\checkedstate-%402x.png" />
+    <Resource Include="Contents\image\Login\checkedstate-%403x.png" />
+    <Resource Include="Contents\image\Login\checkedstate-.png" />
+    <Resource Include="Contents\image\Login\checkedstate-vision%402x.png" />
+    <Resource Include="Contents\image\Login\checkedstate-vision%403x.png" />
+    <Resource Include="Contents\image\Login\checkedstate-vision.png" />
+    <Resource Include="Contents\image\Login\closebutton%402x.png" />
+    <Resource Include="Contents\image\Login\closebutton%403x.png" />
+    <Resource Include="Contents\image\Login\closebutton-1%402x.png" />
+    <Resource Include="Contents\image\Login\closebutton-1%403x.png" />
+    <Resource Include="Contents\image\Login\closebutton-1.png" />
+    <Resource Include="Contents\image\Login\closebutton.png" />
+    <Resource Include="Contents\image\Login\defaultstate+%402x.png" />
+    <Resource Include="Contents\image\Login\defaultstate+%403x.png" />
+    <Resource Include="Contents\image\Login\defaultstate+.png" />
+    <Resource Include="Contents\image\Login\defaultstate-%402x.png" />
+    <Resource Include="Contents\image\Login\defaultstate-%403x.png" />
+    <Resource Include="Contents\image\Login\defaultstate-.png" />
+    <Resource Include="Contents\image\Login\down%402x.png" />
+    <Resource Include="Contents\image\Login\down%403x.png" />
+    <Resource Include="Contents\image\Login\down.png" />
+    <Resource Include="Contents\image\Login\frame%402x.png" />
+    <Resource Include="Contents\image\Login\frame%403x.png" />
+    <Resource Include="Contents\image\Login\frame-2%402x.png" />
+    <Resource Include="Contents\image\Login\frame-2%403x.png" />
+    <Resource Include="Contents\image\Login\frame-2.png" />
+    <Resource Include="Contents\image\Login\frame.png" />
+    <Resource Include="Contents\image\Login\icon-accountnumber副本%402x.png" />
+    <Resource Include="Contents\image\Login\icon-accountnumber副本%403x.png" />
+    <Resource Include="Contents\image\Login\icon-accountnumber副本.png" />
+    <Resource Include="Contents\image\Login\icon-no%402x.png" />
+    <Resource Include="Contents\image\Login\icon-no%403x.png" />
+    <Resource Include="Contents\image\Login\icon-no.png" />
+    <Resource Include="Contents\image\Login\icon-password%402x.png" />
+    <Resource Include="Contents\image\Login\icon-password%403x.png" />
+    <Resource Include="Contents\image\Login\icon-password.png" />
+    <Resource Include="Contents\image\Login\icon-rememberpassword%402x.png" />
+    <Resource Include="Contents\image\Login\icon-rememberpassword%403x.png" />
+    <Resource Include="Contents\image\Login\icon-rememberpassword.png" />
+    <Resource Include="Contents\image\Login\login%402x.png" />
+    <Resource Include="Contents\image\Login\login%403x.png" />
+    <Resource Include="Contents\image\Login\login.png" />
+    <Resource Include="Contents\image\Login\logo%402x.png" />
+    <Resource Include="Contents\image\Login\logo%403x.png" />
+    <Resource Include="Contents\image\Login\logo.png" />
+    <Resource Include="Contents\image\Login\vision%402x.png" />
+    <Resource Include="Contents\image\Login\vision%403x.png" />
+    <Resource Include="Contents\image\Login\vision-m%402x.png" />
+    <Resource Include="Contents\image\Login\vision-m%403x.png" />
+    <Resource Include="Contents\image\Login\vision-m.png" />
+    <Resource Include="Contents\image\Login\vision.png" />
+    <Resource Include="Contents\image\Login\示例项目_登录页小.png" />
+    <Resource Include="Contents\image\logo-red.ico" />
+    <Resource Include="Contents\image\MyDocument\1%402x.png" />
+    <Resource Include="Contents\image\MyDocument\1%403x.png" />
+    <Resource Include="Contents\image\MyDocument\1.png" />
+    <Resource Include="Contents\image\MyDocument\2%402x.png" />
+    <Resource Include="Contents\image\MyDocument\2%403x.png" />
+    <Resource Include="Contents\image\MyDocument\2.png" />
+    <Resource Include="Contents\image\MyDocument\about-checkedstate%402x.png" />
+    <Resource Include="Contents\image\MyDocument\about-checkedstate%403x.png" />
+    <Resource Include="Contents\image\MyDocument\about-checkedstate.png" />
+    <Resource Include="Contents\image\MyDocument\about-checkedstate副本2%402x.png" />
+    <Resource Include="Contents\image\MyDocument\about-checkedstate副本2%403x.png" />
+    <Resource Include="Contents\image\MyDocument\about-checkedstate副本2.png" />
+    <Resource Include="Contents\image\MyDocument\addquipment%402x.png" />
+    <Resource Include="Contents\image\MyDocument\addquipment%403x.png" />
+    <Resource Include="Contents\image\MyDocument\addquipment.png" />
+    <Resource Include="Contents\image\MyDocument\arrow-1%402x.png" />
+    <Resource Include="Contents\image\MyDocument\arrow-1%403x.png" />
+    <Resource Include="Contents\image\MyDocument\arrow-1.png" />
+    <Resource Include="Contents\image\MyDocument\arrow-left%402x.png" />
+    <Resource Include="Contents\image\MyDocument\arrow-left%403x.png" />
+    <Resource Include="Contents\image\MyDocument\arrow-left.png" />
+    <Resource Include="Contents\image\MyDocument\delete-checkedstate%402x.png" />
+    <Resource Include="Contents\image\MyDocument\delete-checkedstate%403x.png" />
+    <Resource Include="Contents\image\MyDocument\delete-checkedstate.png" />
+    <Resource Include="Contents\image\MyDocument\delete副本3%402x.png" />
+    <Resource Include="Contents\image\MyDocument\delete副本3%403x.png" />
+    <Resource Include="Contents\image\MyDocument\delete副本3.png" />
+    <Resource Include="Contents\image\MyDocument\equipmentcenter%402x.png" />
+    <Resource Include="Contents\image\MyDocument\equipmentcenter%403x.png" />
+    <Resource Include="Contents\image\MyDocument\equipmentcenter.png" />
+    <Resource Include="Contents\image\MyDocument\ewm-m%402x.png" />
+    <Resource Include="Contents\image\MyDocument\ewm-m%403x.png" />
+    <Resource Include="Contents\image\MyDocument\ewm-m.png" />
+    <Resource Include="Contents\image\MyDocument\ewm-x%402x.png" />
+    <Resource Include="Contents\image\MyDocument\ewm-x%403x.png" />
+    <Resource Include="Contents\image\MyDocument\ewm-x.png" />
+    <Resource Include="Contents\image\MyDocument\excel%402x.png" />
+    <Resource Include="Contents\image\MyDocument\excel%403x.png" />
+    <Resource Include="Contents\image\MyDocument\excel.png" />
+    <Resource Include="Contents\image\MyDocument\favourite-checkedstate%402x.png" />
+    <Resource Include="Contents\image\MyDocument\favourite-checkedstate%403x.png" />
+    <Resource Include="Contents\image\MyDocument\favourite-checkedstate.png" />
+    <Resource Include="Contents\image\MyDocument\favourite-checkedstate副本2%402x.png" />
+    <Resource Include="Contents\image\MyDocument\favourite-checkedstate副本2%403x.png" />
+    <Resource Include="Contents\image\MyDocument\favourite-checkedstate副本2.png" />
+    <Resource Include="Contents\image\MyDocument\frame-2%402x.png" />
+    <Resource Include="Contents\image\MyDocument\frame-2%403x.png" />
+    <Resource Include="Contents\image\MyDocument\frame-2.png" />
+    <Resource Include="Contents\image\MyDocument\frame-search%402x.png" />
+    <Resource Include="Contents\image\MyDocument\frame-search%403x.png" />
+    <Resource Include="Contents\image\MyDocument\frame-search.png" />
+    <Resource Include="Contents\image\MyDocument\icon-fastpass%402x.png" />
+    <Resource Include="Contents\image\MyDocument\icon-fastpass%403x.png" />
+    <Resource Include="Contents\image\MyDocument\icon-fastpass.png" />
+    <Resource Include="Contents\image\MyDocument\icon-Norecord%402x.png" />
+    <Resource Include="Contents\image\MyDocument\icon-Norecord%403x.png" />
+    <Resource Include="Contents\image\MyDocument\icon-Norecord.png" />
+    <Resource Include="Contents\image\MyDocument\INTOPRINT%402x.png" />
+    <Resource Include="Contents\image\MyDocument\INTOPRINT%403x.png" />
+    <Resource Include="Contents\image\MyDocument\INTOPRINT.png" />
+    <Resource Include="Contents\image\MyDocument\logo%402x.png" />
+    <Resource Include="Contents\image\MyDocument\logo%403x.png" />
+    <Resource Include="Contents\image\MyDocument\logo.png" />
+    <Resource Include="Contents\image\MyDocument\loopsearch%402x.png" />
+    <Resource Include="Contents\image\MyDocument\loopsearch%403x.png" />
+    <Resource Include="Contents\image\MyDocument\loopsearch.png" />
+    <Resource Include="Contents\image\MyDocument\mydocument%402x.png" />
+    <Resource Include="Contents\image\MyDocument\mydocument%403x.png" />
+    <Resource Include="Contents\image\MyDocument\mydocument.png" />
+    <Resource Include="Contents\image\MyDocument\New_PDF%402x.png" />
+    <Resource Include="Contents\image\MyDocument\New_PDF%403x.png" />
+    <Resource Include="Contents\image\MyDocument\New_PDF.png" />
+    <Resource Include="Contents\image\MyDocument\pdf%402x.png" />
+    <Resource Include="Contents\image\MyDocument\pdf%403x.png" />
+    <Resource Include="Contents\image\MyDocument\pdf.png" />
+    <Resource Include="Contents\image\MyDocument\personal%402x.png" />
+    <Resource Include="Contents\image\MyDocument\personal%403x.png" />
+    <Resource Include="Contents\image\MyDocument\personal.png" />
+    <Resource Include="Contents\image\MyDocument\photo%402x.png" />
+    <Resource Include="Contents\image\MyDocument\photo%403x.png" />
+    <Resource Include="Contents\image\MyDocument\photo.png" />
+    <Resource Include="Contents\image\MyDocument\ppt%402x.png" />
+    <Resource Include="Contents\image\MyDocument\ppt%403x.png" />
+    <Resource Include="Contents\image\MyDocument\ppt.png" />
+    <Resource Include="Contents\image\MyDocument\Print%402x.png" />
+    <Resource Include="Contents\image\MyDocument\Print%403x.png" />
+    <Resource Include="Contents\image\MyDocument\Print.png" />
+    <Resource Include="Contents\image\MyDocument\Printer%402x.png" />
+    <Resource Include="Contents\image\MyDocument\Printer%403x.png" />
+    <Resource Include="Contents\image\MyDocument\Printer.png" />
+    <Resource Include="Contents\image\MyDocument\red-frame%402x.png" />
+    <Resource Include="Contents\image\MyDocument\red-frame%403x.png" />
+    <Resource Include="Contents\image\MyDocument\red-frame.png" />
+    <Resource Include="Contents\image\MyDocument\redline%402x.png" />
+    <Resource Include="Contents\image\MyDocument\redline%403x.png" />
+    <Resource Include="Contents\image\MyDocument\redline.png" />
+    <Resource Include="Contents\image\MyDocument\txt%402x.png" />
+    <Resource Include="Contents\image\MyDocument\txt%403x.png" />
+    <Resource Include="Contents\image\MyDocument\txt.png" />
+    <Resource Include="Contents\image\MyDocument\word%402x.png" />
+    <Resource Include="Contents\image\MyDocument\word%403x.png" />
+    <Resource Include="Contents\image\MyDocument\word.png" />
+    <Resource Include="Contents\image\MyDocument\_doc%402x.png" />
+    <Resource Include="Contents\image\MyDocument\_doc%403x.png" />
+    <Resource Include="Contents\image\MyDocument\_doc.png" />
+    <Resource Include="Contents\image\MyDocument\_jpg%402x.png" />
+    <Resource Include="Contents\image\MyDocument\_jpg%403x.png" />
+    <Resource Include="Contents\image\MyDocument\_jpg.png" />
+    <Resource Include="Contents\image\MyDocument\_pdf%402x.png" />
+    <Resource Include="Contents\image\MyDocument\_pdf%403x.png" />
+    <Resource Include="Contents\image\MyDocument\_pdf.png" />
+    <Resource Include="Contents\image\MyDocument\_ppt%402x.png" />
+    <Resource Include="Contents\image\MyDocument\_ppt%403x.png" />
+    <Resource Include="Contents\image\MyDocument\_ppt.png" />
+    <Resource Include="Contents\image\MyDocument\_txt%402x.png" />
+    <Resource Include="Contents\image\MyDocument\_txt%403x.png" />
+    <Resource Include="Contents\image\MyDocument\_txt.png" />
+    <Resource Include="Contents\image\MyDocument\_xlsx%402x.png" />
+    <Resource Include="Contents\image\MyDocument\_xlsx%403x.png" />
+    <Resource Include="Contents\image\MyDocument\_xlsx.png" />
+    <Resource Include="Contents\image\MyDocument\椭圆1%402x.png" />
+    <Resource Include="Contents\image\MyDocument\椭圆1%403x.png" />
+    <Resource Include="Contents\image\MyDocument\椭圆1.png" />
+    <Resource Include="Contents\image\MyDocument\示例项目_PC端-我的文档.png" />
+    <Resource Include="Contents\image\Nav\arrow-b%402x.png" />
+    <Resource Include="Contents\image\Nav\arrow-b%403x.png" />
+    <Resource Include="Contents\image\Nav\arrow-b.png" />
+    <Resource Include="Contents\image\NewAddequip\closebutton%402x.png" />
+    <Resource Include="Contents\image\NewAddequip\closebutton%403x.png" />
+    <Resource Include="Contents\image\NewAddequip\closebutton.png" />
+    <Resource Include="Contents\image\NewAddequip\frame%402x.png" />
+    <Resource Include="Contents\image\NewAddequip\frame%403x.png" />
+    <Resource Include="Contents\image\NewAddequip\frame.png" />
+    <Resource Include="Contents\image\NewAddequip\frame无透明边缘_03.png" />
+    <Resource Include="Contents\image\NewAddequip\red-button%402x.png" />
+    <Resource Include="Contents\image\NewAddequip\red-button%403x.png" />
+    <Resource Include="Contents\image\NewAddequip\red-button.png" />
+    <Resource Include="Contents\image\NewAddequip\Select%402x.png" />
+    <Resource Include="Contents\image\NewAddequip\Select%403x.png" />
+    <Resource Include="Contents\image\NewAddequip\Select.png" />
+    <Resource Include="Contents\image\NewAddequip\示例项目_PC端-新增设备-改123.png" />
+    <Resource Include="Contents\image\OrderState\about%402x.png" />
+    <Resource Include="Contents\image\OrderState\about%403x.png" />
+    <Resource Include="Contents\image\OrderState\about-m%402x.png" />
+    <Resource Include="Contents\image\OrderState\about-m%403x.png" />
+    <Resource Include="Contents\image\OrderState\about-m.png" />
+    <Resource Include="Contents\image\OrderState\about.png" />
+    <Resource Include="Contents\image\OrderState\ddjl-m%402x.png" />
+    <Resource Include="Contents\image\OrderState\ddjl-m%403x.png" />
+    <Resource Include="Contents\image\OrderState\ddjl-m.png" />
+    <Resource Include="Contents\image\OrderState\delete-m%402x.png" />
+    <Resource Include="Contents\image\OrderState\delete-m%403x.png" />
+    <Resource Include="Contents\image\OrderState\delete-m.png" />
+    <Resource Include="Contents\image\OrderState\delete-x%402x.png" />
+    <Resource Include="Contents\image\OrderState\delete-x%403x.png" />
+    <Resource Include="Contents\image\OrderState\delete-x.png" />
+    <Resource Include="Contents\image\OrderState\frame-2%402x.png" />
+    <Resource Include="Contents\image\OrderState\frame-2%403x.png" />
+    <Resource Include="Contents\image\OrderState\frame-2.png" />
+    <Resource Include="Contents\image\OrderState\Print%402x.png" />
+    <Resource Include="Contents\image\OrderState\Print%403x.png" />
+    <Resource Include="Contents\image\OrderState\Print-x%402x.png" />
+    <Resource Include="Contents\image\OrderState\Print-x%403x.png" />
+    <Resource Include="Contents\image\OrderState\Print-x.png" />
+    <Resource Include="Contents\image\OrderState\Print.png" />
+    <Resource Include="Contents\image\OrderState\Print副本%402x.png" />
+    <Resource Include="Contents\image\OrderState\Print副本%403x.png" />
+    <Resource Include="Contents\image\OrderState\Print副本.png" />
+    <Resource Include="Contents\image\OrderState\red-frame%402x.png" />
+    <Resource Include="Contents\image\OrderState\red-frame%403x.png" />
+    <Resource Include="Contents\image\OrderState\red-frame.png" />
+    <Resource Include="Contents\image\OrderState\xz-ddjl-x%402x.png" />
+    <Resource Include="Contents\image\OrderState\xz-ddjl-x%403x.png" />
+    <Resource Include="Contents\image\OrderState\xz-ddjl-x.png" />
+    <Resource Include="Contents\image\OrderState\_doc%402x.png" />
+    <Resource Include="Contents\image\OrderState\_doc%403x.png" />
+    <Resource Include="Contents\image\OrderState\_doc.png" />
+    <Resource Include="Contents\image\OrderState\_jpg%402x.png" />
+    <Resource Include="Contents\image\OrderState\_jpg%403x.png" />
+    <Resource Include="Contents\image\OrderState\_jpg.png" />
+    <Resource Include="Contents\image\OrderState\_pdf%402x.png" />
+    <Resource Include="Contents\image\OrderState\_pdf%403x.png" />
+    <Resource Include="Contents\image\OrderState\_pdf.png" />
+    <Resource Include="Contents\image\OrderState\_pdf副本%402x.png" />
+    <Resource Include="Contents\image\OrderState\_pdf副本%403x.png" />
+    <Resource Include="Contents\image\OrderState\_pdf副本.png" />
+    <Resource Include="Contents\image\OrderState\_ppt%402x.png" />
+    <Resource Include="Contents\image\OrderState\_ppt%403x.png" />
+    <Resource Include="Contents\image\OrderState\_ppt.png" />
+    <Resource Include="Contents\image\OrderState\_txt%402x.png" />
+    <Resource Include="Contents\image\OrderState\_txt%403x.png" />
+    <Resource Include="Contents\image\OrderState\_txt.png" />
+    <Resource Include="Contents\image\OrderState\椭圆5副本%402x.png" />
+    <Resource Include="Contents\image\OrderState\椭圆5副本%403x.png" />
+    <Resource Include="Contents\image\OrderState\椭圆5副本.png" />
+    <Resource Include="Contents\image\OrderState\矩形13副本%402x.png" />
+    <Resource Include="Contents\image\OrderState\矩形13副本%403x.png" />
+    <Resource Include="Contents\image\OrderState\矩形13副本.png" />
+    <Resource Include="Contents\image\OrderState\示例项目_PC端-我的文档-订单列表.png" />
+    <Resource Include="Contents\image\Personal\comments%402x.png" />
+    <Resource Include="Contents\image\Personal\comments%403x.png" />
+    <Resource Include="Contents\image\Personal\comments-circle%402x.png" />
+    <Resource Include="Contents\image\Personal\comments-circle%403x.png" />
+    <Resource Include="Contents\image\Personal\comments-circle.png" />
+    <Resource Include="Contents\image\Personal\comments.png" />
+    <Resource Include="Contents\image\Personal\department%402x.png" />
+    <Resource Include="Contents\image\Personal\department%403x.png" />
+    <Resource Include="Contents\image\Personal\department.png" />
+    <Resource Include="Contents\image\Personal\document%402x.png" />
+    <Resource Include="Contents\image\Personal\document%403x.png" />
+    <Resource Include="Contents\image\Personal\document.png" />
+    <Resource Include="Contents\image\Personal\duties%402x.png" />
+    <Resource Include="Contents\image\Personal\duties%403x.png" />
+    <Resource Include="Contents\image\Personal\duties.png" />
+    <Resource Include="Contents\image\Personal\equipmentcenter%402x.png" />
+    <Resource Include="Contents\image\Personal\equipmentcenter%403x.png" />
+    <Resource Include="Contents\image\Personal\equipmentcenter.png" />
+    <Resource Include="Contents\image\Personal\icon-mydocument-1%402x.png" />
+    <Resource Include="Contents\image\Personal\icon-mydocument-1%403x.png" />
+    <Resource Include="Contents\image\Personal\icon-mydocument-1.png" />
+    <Resource Include="Contents\image\Personal\icon-personal%402x.png" />
+    <Resource Include="Contents\image\Personal\icon-personal%403x.png" />
+    <Resource Include="Contents\image\Personal\icon-personal.png" />
+    <Resource Include="Contents\image\Personal\INTOPRINT%402x.png" />
+    <Resource Include="Contents\image\Personal\INTOPRINT%403x.png" />
+    <Resource Include="Contents\image\Personal\INTOPRINT.png" />
+    <Resource Include="Contents\image\Personal\logo%402x.png" />
+    <Resource Include="Contents\image\Personal\logo%403x.png" />
+    <Resource Include="Contents\image\Personal\logo-2%402x.png" />
+    <Resource Include="Contents\image\Personal\logo-2%403x.png" />
+    <Resource Include="Contents\image\Personal\logo-2.png" />
+    <Resource Include="Contents\image\Personal\logo-red.png" />
+    <Resource Include="Contents\image\Personal\logo.png" />
+    <Resource Include="Contents\image\Personal\Mobile%402x.png" />
+    <Resource Include="Contents\image\Personal\Mobile%403x.png" />
+    <Resource Include="Contents\image\Personal\Mobile.png" />
+    <Resource Include="Contents\image\Personal\Newequipment_Newequipment_%402x.png" />
+    <Resource Include="Contents\image\Personal\Newequipment_Newequipment_%403x.png" />
+    <Resource Include="Contents\image\Personal\Newequipment_Newequipment_.png" />
+    <Resource Include="Contents\image\Personal\Newspaper%402x.png" />
+    <Resource Include="Contents\image\Personal\Newspaper%403x.png" />
+    <Resource Include="Contents\image\Personal\Newspaper.png" />
+    <Resource Include="Contents\image\Personal\titlebar%402x.png" />
+    <Resource Include="Contents\image\Personal\titlebar%403x.png" />
+    <Resource Include="Contents\image\Personal\titlebar.png" />
+    <Resource Include="Contents\image\Personal\Wallet%402x.png" />
+    <Resource Include="Contents\image\Personal\Wallet%403x.png" />
+    <Resource Include="Contents\image\Personal\Wallet.png" />
+    <Resource Include="Contents\image\Personal\write%402x.png" />
+    <Resource Include="Contents\image\Personal\write%403x.png" />
+    <Resource Include="Contents\image\Personal\write.png" />
+    <Resource Include="Contents\image\Personal\···1%402x.png" />
+    <Resource Include="Contents\image\Personal\···1%403x.png" />
+    <Resource Include="Contents\image\Personal\···1.png" />
+    <Resource Include="Contents\image\Personal\···2%402x.png" />
+    <Resource Include="Contents\image\Personal\···2%403x.png" />
+    <Resource Include="Contents\image\Personal\···2.png" />
+    <Resource Include="Contents\image\Personal\···3%402x.png" />
+    <Resource Include="Contents\image\Personal\···3%403x.png" />
+    <Resource Include="Contents\image\Personal\···3.png" />
+    <Resource Include="Contents\image\Personal\···4%402x.png" />
+    <Resource Include="Contents\image\Personal\···4%403x.png" />
+    <Resource Include="Contents\image\Personal\···4.png" />
+    <Resource Include="Contents\image\Personal\示例项目_PC端-主页.png" />
+    <Resource Include="Contents\image\Printerpupop\+%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\+%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\+.png" />
+    <Resource Include="Contents\image\Printerpupop\1-1%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\1-1%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\1-1.png" />
+    <Resource Include="Contents\image\Printerpupop\1-2%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\1-2%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\1-2.png" />
+    <Resource Include="Contents\image\Printerpupop\closebutton%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\closebutton%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\closebutton.png" />
+    <Resource Include="Contents\image\Printerpupop\f%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\f%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\f.png" />
+    <Resource Include="Contents\image\Printerpupop\red-1%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\red-1%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\red-1.png" />
+    <Resource Include="Contents\image\Printerpupop\red-2%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\red-2%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\red-2.png" />
+    <Resource Include="Contents\image\Printerpupop\red-button%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\red-button%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\red-button.png" />
+    <Resource Include="Contents\image\Printerpupop\_%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\_%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\_.png" />
+    <Resource Include="Contents\image\Printerpupop\矩形13%402x.png" />
+    <Resource Include="Contents\image\Printerpupop\矩形13%403x.png" />
+    <Resource Include="Contents\image\Printerpupop\矩形13.png" />
+    <Resource Include="Contents\image\Printerpupop\示例项目_PC端-我的文档-打印弹窗.png" />
+    <Resource Include="Contents\image\Register\frame-1%402x.png" />
+    <Resource Include="Contents\image\Register\frame-1%403x.png" />
+    <Resource Include="Contents\image\Register\frame-1.png" />
+    <Resource Include="Contents\image\Register\frame-2%402x.png" />
+    <Resource Include="Contents\image\Register\frame-2%403x.png" />
+    <Resource Include="Contents\image\Register\frame-2.png" />
+    <Resource Include="Contents\image\Register\frame-3%402x.png" />
+    <Resource Include="Contents\image\Register\frame-3%403x.png" />
+    <Resource Include="Contents\image\Register\frame-3.png" />
+    <Resource Include="Contents\image\Register\login%402x.png" />
+    <Resource Include="Contents\image\Register\login%403x.png" />
+    <Resource Include="Contents\image\Register\login.png" />
+    <Resource Include="Contents\image\Register\red-frame%402x.png" />
+    <Resource Include="Contents\image\Register\red-frame%403x.png" />
+    <Resource Include="Contents\image\Register\red-frame.png" />
+    <Resource Include="Contents\image\Register\vision-m%402x.png" />
+    <Resource Include="Contents\image\Register\vision-m%403x.png" />
+    <Resource Include="Contents\image\Register\vision-m.png" />
+    <Resource Include="Contents\image\Register\登录页-忘记没密码切图示例项目_登录页-注册账号.png" />
+    <Resource Include="Contents\image\_20181120105245.jpg" />
+    <Resource Include="Contents\Font\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Resource Include="Contents\Themes\big\a\default.jpg" />
+    <Resource Include="Contents\Themes\thumb\a\default.jpg" />
+    <Resource Include="Contents\Config\application.xml" />
+    <Resource Include="Contents\Config\pathicon.xml" />
+    <Resource Include="AYUILibrary\Ay.MvcFramework.Animation.xml" />
+    <Content Include="AYUILibrary\Ay.MvcFramework.AyFunc.dll" />
+    <Resource Include="AYUILibrary\Ay.MvcFramework.AyFunc.xml" />
+    <Content Include="AYUILibrary\Ay.MvcFramework.Config.dll" />
+    <Resource Include="AYUILibrary\Ay.MvcFramework.Config.xml" />
+    <Content Include="AYUILibrary\Ay.MvcFramework.CsShared.dll" />
+    <Resource Include="AYUILibrary\Ay.MvcFramework.CsShared.xml" />
+    <Content Include="AYUILibrary\Ay.MvcFramework.dll" />
+    <Content Include="AYUILibrary\Ay.MvcFramework.Pure.dll" />
+    <Resource Include="AYUILibrary\Ay.MvcFramework.Pure.xml" />
+    <Content Include="AYUILibrary\Ay.MvcFramework.Wpf.dll" />
+    <Resource Include="AYUILibrary\Ay.MvcFramework.Wpf.xml" />
+    <Resource Include="AYUILibrary\Ay.MvcFramework.xml" />
+    <Content Include="AYUILibrary\Interop.SHDocVw.dll" />
+    <Content Include="AYUILibrary\Microsoft.Expression.Controls.dll" />
+    <Content Include="AYUILibrary\Microsoft.Expression.Drawing.dll" />
+    <Resource Include="AYUILibrary\Microsoft.Expression.Drawing.xml" />
+    <Content Include="AYUILibrary\Microsoft.Expression.Interactions.dll" />
+    <Resource Include="AYUILibrary\Microsoft.Expression.Interactions.xml" />
+    <Content Include="AYUILibrary\Newtonsoft.Json.dll" />
+    <Resource Include="AYUILibrary\Newtonsoft.Json.xml" />
+    <Content Include="AYUILibrary\System.Windows.Interactivity.dll" />
+    <Resource Include="AYUILibrary\System.Windows.Interactivity.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntoApp.Bll\IntoApp.Bll.csproj">
+      <Project>{71064bb8-3385-462d-84b0-578ae02361df}</Project>
+      <Name>IntoApp.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntoApp.Common\IntoApp.Common.csproj">
+      <Project>{b1151023-9151-4b67-b555-70cbd3e58698}</Project>
+      <Name>IntoApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyMessageBox\MyMessageBox.csproj">
+      <Project>{28a41674-1ce8-455a-a9ff-647a0edef7a2}</Project>
+      <Name>MyMessageBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

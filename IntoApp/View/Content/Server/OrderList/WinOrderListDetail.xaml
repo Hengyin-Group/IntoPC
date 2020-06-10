@@ -1,0 +1,346 @@
+﻿<Skin:SkinSimpleWindow x:Class="IntoApp.View.Content.Server.OrderList.WinOrderListDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IntoApp.View.Content.Server.OrderList"
+        xmlns:Skin="clr-namespace:Skin.WPF;assembly=Skin.WPF"
+        xmlns:Data="clr-namespace:IntoApp.ViewModel.ContentViewModel.ServerViewModel.OrderListViewModel"
+        xmlns:Controls="clr-namespace:Skin.WPF.Controls;assembly=Skin.WPF"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        mc:Ignorable="d"
+        WindowShadowColor="#888888"
+        WindowShadowOpacity="0.4"
+        WindowShadowSize="10" ResizeMode="CanResize"
+        WindowStartupLocation="CenterScreen"
+        Title="订单详情" Height="450" Width="400">
+    <Window.DataContext>
+        <Data:WinOrderListDetailViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0">
+            <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Controls:UseWindowTopmost
+                    Cursor="Hand" ToolTip="{Binding Tooltip}"
+                    x:Name="Ding"
+                    Image="{StaticResource Icon_Ding1}"
+                    ImageMouseOver="{StaticResource Icon_Ding1}"
+                    ImageIsChecked="{StaticResource Icon_Ding2}"
+                    ImageBrush="#3B3E3E" ImageIsCheckedBrush="#3B3E3E"
+                    ImageHoverBrush="#3B3E3E"
+                    ImageHeight="15"
+                    ImageWidth="15">
+                </Controls:UseWindowTopmost>
+                <Controls:UseSystemMinButton
+                    Cursor="Hand"
+                    SystemButtonForeground="#646464"
+                    SystemButtonHoverColor="#C4C4C4"
+                    SystemButtonHoverForeground="White"
+                    SystemButtonSize="22"
+                    Icon="{StaticResource Icon_Min}" />
+                <Controls:UseSystemMaxButton
+                    Cursor="Hand"
+                    SystemButtonForeground="#646464"
+                    SystemButtonHoverColor="#C4C4C4"
+                    SystemButtonHoverForeground="White"
+                    SystemButtonSize="24"
+                    Icon="{StaticResource Icon_Close}"/>
+                <Controls:UseSystemCloseButton
+                    Cursor="Hand"
+                    SystemButtonForeground="#646464"
+                    SystemButtonHoverColor="#C4C4C4"
+                    SystemButtonHoverForeground="White"
+                    SystemButtonSize="22" />
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1" Visibility="{Binding Order10,Converter={StaticResource BoolToVisibilityConverter}}" >
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Margin="5">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="打印二维码"/>
+                <Image Width="120" Height="120" x:Name="qrCodeUrl" Source="{Binding QrCodeUrl}"/>
+                <WrapPanel Width="200" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                           Margin="5">
+                    <TextBlock Text="打印码:"/>
+                    <TextBlock Width="10"/>
+                    <TextBlock FontSize="20" Text="{Binding PrintCode}"/>
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <Controls:UseLinkButton
+                            Height="30"
+                            Width="300"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            DisplayLine="False"
+                            Background="Transparent"
+                            Command="{Binding CheckFileCommand}">
+                        <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                   Margin="0" Width="250">
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Width="240" HorizontalAlignment="Left" LineHeight="15">文件名：<TextBlock Text="{Binding FileNameNoSuffix}"/></TextBlock>
+                                <Controls:UseImage Grid.Column="1"
+                                                   HorizontalAlignment="Right"
+                                                   Image="{StaticResource Icon_ArrowRight}"
+                                                   ImageWidth="6" ImageHeight="12" ImageBrush="#3B3E3E"/>
+                            </Grid>
+                        </WrapPanel>
+                    </Controls:UseLinkButton>
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <!--<Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent">
+                        <TextBlock HorizontalAlignment="Left" LineHeight="15">订单号：<TextBlock Text="{Binding OrderNo}"/></TextBlock>
+                    </Controls:UseLinkButton>-->
+                    <TextBlock Margin="25,0,25,0" HorizontalAlignment="Left" LineHeight="15">订单号:<TextBlock Text="{Binding OrderNo}"/></TextBlock>
+
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <!--<Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent">
+                    </Controls:UseLinkButton>-->
+                    <TextBlock Margin="25,0,25,0" HorizontalAlignment="Left" LineHeight="15">创建时间：<TextBlock Text="{Binding CreateTime}"/></TextBlock>
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="25,0,25,0" Grid.Column="0" HorizontalAlignment="Left" LineHeight="15">打印份数：<TextBlock Text="{Binding Copies}"/></TextBlock>
+                            <TextBlock Margin="25,0,25,0" Grid.Column="1" HorizontalAlignment="Left" LineHeight="15">页码范围：<TextBlock Text="{Binding FilePageSection}"/></TextBlock>
+                        </Grid>
+                        <!--<Controls:UseLinkButton
+                            Height="30"
+                            Width="150"
+                            HorizontalAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            DisplayLine="False"
+                            Background="Transparent">
+                        </Controls:UseLinkButton>-->
+
+                        <!--<Controls:UseLinkButton
+                            Height="30"
+                            Width="150"
+                            HorizontalAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            DisplayLine="False"
+                            Background="Transparent">
+                            <TextBlock HorizontalAlignment="Left" LineHeight="15">页码范围：<TextBlock Text="{Binding FilePageSection}"/></TextBlock>
+                        </Controls:UseLinkButton>-->
+
+                    </WrapPanel>
+
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Visibility="{Binding Order0,Converter={StaticResource BoolToVisibilityConverter}}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Margin="5">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="订单状态未完成" FontSize="18" Foreground="#FF0000" />
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="(可点击文件名继续完成订单)" />
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent"
+                        Command="{Binding CheckFileCommand}">
+                        <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                   Margin="0" Width="250">
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Width="240" HorizontalAlignment="Left" LineHeight="15">文件名：<TextBlock Text="{Binding FileNameNoSuffix}"/></TextBlock>
+                                <Controls:UseImage Grid.Column="1"
+                                                   HorizontalAlignment="Right"
+                                                   Image="{StaticResource Icon_ArrowRight}"
+                                                   ImageWidth="6" ImageHeight="12" ImageBrush="#3B3E3E"/>
+                            </Grid>
+                        </WrapPanel>
+                    </Controls:UseLinkButton>
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <!--<Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent">
+                        <TextBlock HorizontalAlignment="Left" LineHeight="15">订单号：<TextBlock Text="{Binding OrderNo}"/></TextBlock>
+                    </Controls:UseLinkButton>-->
+                    <TextBlock Margin="25,0,25,0" HorizontalAlignment="Left" LineHeight="15">订单号:<TextBlock Text="{Binding OrderNo}"/></TextBlock>
+
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <!--<Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent">
+                    </Controls:UseLinkButton>-->
+                    <TextBlock Margin="25,0,25,0" HorizontalAlignment="Left" LineHeight="15">创建时间：<TextBlock Text="{Binding CreateTime}"/></TextBlock>
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="25,0,25,0" Grid.Column="0" HorizontalAlignment="Left" LineHeight="15">打印份数：<TextBlock Text="{Binding Copies}"/></TextBlock>
+                            <TextBlock Margin="25,0,25,0" Grid.Column="1" HorizontalAlignment="Left" LineHeight="15">页码范围：<TextBlock Text="{Binding FilePageSection}"/></TextBlock>
+                        </Grid>
+                        <!--<Controls:UseLinkButton
+                            Height="30"
+                            Width="150"
+                            HorizontalAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            DisplayLine="False"
+                            Background="Transparent">
+                        </Controls:UseLinkButton>-->
+
+                        <!--<Controls:UseLinkButton
+                            Height="30"
+                            Width="150"
+                            HorizontalAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            DisplayLine="False"
+                            Background="Transparent">
+                            <TextBlock HorizontalAlignment="Left" LineHeight="15">页码范围：<TextBlock Text="{Binding FilePageSection}"/></TextBlock>
+                        </Controls:UseLinkButton>-->
+
+                    </WrapPanel>
+
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Visibility="{Binding Order200,Converter={StaticResource BoolToVisibilityConverter}}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Margin="5">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="订单状态已完成" FontSize="18" Foreground="#0034FF" />
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="(可点击文件名可再来一单)"/>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent"
+                        Command="{Binding CheckFileCommand}">
+                        <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                   Margin="0" Width="250">
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Width="240" HorizontalAlignment="Left" LineHeight="15">文件名：<TextBlock Text="{Binding FileNameNoSuffix}"/></TextBlock>
+                                <Controls:UseImage Grid.Column="1"
+                                                   HorizontalAlignment="Right"
+                                                   Image="{StaticResource Icon_ArrowRight}"
+                                                   ImageWidth="6" ImageHeight="12" ImageBrush="#3B3E3E"/>
+                            </Grid>
+                        </WrapPanel>
+                    </Controls:UseLinkButton>
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <!--<Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent">
+                        <TextBlock HorizontalAlignment="Left" LineHeight="15">订单号：<TextBlock Text="{Binding OrderNo}"/></TextBlock>
+                    </Controls:UseLinkButton>-->
+                    <TextBlock Margin="25,0,25,0" HorizontalAlignment="Left" LineHeight="15">订单号:<TextBlock Text="{Binding OrderNo}"/></TextBlock>
+
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <!--<Controls:UseLinkButton
+                        Height="30"
+                        Width="300"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        DisplayLine="False"
+                        Background="Transparent">
+                    </Controls:UseLinkButton>-->
+                    <TextBlock Margin="25,0,25,0" HorizontalAlignment="Left" LineHeight="15">创建时间：<TextBlock Text="{Binding CreateTime}"/></TextBlock>
+                </WrapPanel>
+                <WrapPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="5">
+                    <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="25,0,25,0" Grid.Column="0" HorizontalAlignment="Left" LineHeight="15">打印份数：<TextBlock Text="{Binding Copies}"/></TextBlock>
+                            <TextBlock Margin="25,0,25,0" Grid.Column="1" HorizontalAlignment="Left" LineHeight="15">页码范围：<TextBlock Text="{Binding FilePageSection}"/></TextBlock>
+                        </Grid>
+                        <!--<Controls:UseLinkButton
+                            Height="30"
+                            Width="150"
+                            HorizontalAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            DisplayLine="False"
+                            Background="Transparent">
+                        </Controls:UseLinkButton>-->
+
+                        <!--<Controls:UseLinkButton
+                            Height="30"
+                            Width="150"
+                            HorizontalAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            DisplayLine="False"
+                            Background="Transparent">
+                            <TextBlock HorizontalAlignment="Left" LineHeight="15">页码范围：<TextBlock Text="{Binding FilePageSection}"/></TextBlock>
+                        </Controls:UseLinkButton>-->
+
+                    </WrapPanel>
+
+                </WrapPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Skin:SkinSimpleWindow>

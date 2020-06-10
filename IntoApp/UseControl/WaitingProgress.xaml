@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="IntoApp.UseControl.WaitingProgress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IntoApp.UseControl"
+             xmlns:Controls="clr-namespace:Skin.WPF.Controls;assembly=Skin.WPF"
+             mc:Ignorable="d" Background="#FFFFFF" Visibility="Collapsed"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Storyboard x:Key="waiting" Name="waiting">
+            <DoubleAnimation Storyboard.TargetName="SpinnerRotate" Storyboard.TargetProperty="(RotateTransform.Angle)" From="0" To="359" Duration="0:0:02" RepeatBehavior="Forever" ></DoubleAnimation>
+        </Storyboard>
+    </UserControl.Resources>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Controls:UseImage x:Name="Loading" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"
+                               Image="{StaticResource Icon_Loading}"
+                               ImageWidth="40"
+                               ImageHeight="40"
+                               ImageBrush="{StaticResource Into_MainThemeColor_grayHover2}">
+            <Controls:UseImage.RenderTransform>
+                <RotateTransform x:Name="SpinnerRotate" Angle="0"/>
+            </Controls:UseImage.RenderTransform>
+        </Controls:UseImage>
+        <TextBlock Height="10"/>
+        <TextBlock x:Name="TextShow" Foreground="#FFFFFF" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+    </StackPanel>
+
+</UserControl>

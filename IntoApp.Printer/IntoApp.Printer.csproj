@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6B95A34-8680-4C08-9A47-F6BDB6F3723F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IntoApp.Printer</RootNamespace>
+    <AssemblyName>IntoApp.Printer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>IntoApp.Printer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bottles, Version=1.0.0.441, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bottles.1.0.0.441\lib\Bottles.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuCore.1.0.0.225\lib\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuLocalization, Version=0.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuLocalization.0.9.5.124\lib\FubuLocalization.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuMVC.Core, Version=1.0.0.1401, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FubuMVC.Core.1.0.0.1401\lib\net40\FubuMVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.2.0.37223, Culture=neutral, PublicKeyToken=0e453835af4ee6ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.2.0.37224, Culture=neutral, PublicKeyToken=f46ff315b1088208, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlTags, Version=1.1.0.114, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlTags.1.1.0.114\lib\4.0\HtmlTags.dll</HintPath>
+    </Reference>
+    <Reference Include="IntoApp.Dal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IntoApp.Dal\bin\Debug\IntoApp.Dal.dll</HintPath>
+    </Reference>
+    <Reference Include="Lierda.WPFHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cbb49eab16984ff2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lierda.WPFHelper.1.0.3\lib\net40\Lierda.WPFHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\lib\PanuonUI.Silver\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Panuon.UI.Silver">
+      <HintPath>..\lib\PanuonUI.Silver\Panuon.UI.Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Pipes, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pipes.2.3.0\lib\net40\Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\AccountInfo.cs" />
+    <Compile Include="Pipe\PipeEnumHelper.cs" />
+    <Compile Include="Pipe\PipeHelp.cs" />
+    <Compile Include="Pipe\PipeReport.cs" />
+    <Compile Include="Pipe\StreamString.cs" />
+    <Compile Include="Pipe\StringToStream.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="TestWindow.xaml.cs">
+      <DependentUpon>TestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\NavigationService.cs" />
+    <Compile Include="Utils\NotificationHelper.cs" />
+    <Compile Include="ViewModel\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModel\AppPrinterWindowModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ModifyNameViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\ModifyNameWindow.xaml.cs">
+      <DependentUpon>ModifyNameWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AppPrinterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppPrinterWindow.xaml.cs">
+      <DependentUpon>AppPrinterWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Style\Path.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifyNameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\IntoApp.Bll\IntoApp.Bll.csproj">
+      <Project>{71064bb8-3385-462d-84b0-578ae02361df}</Project>
+      <Name>IntoApp.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntoApp.Common\IntoApp.Common.csproj">
+      <Project>{b1151023-9151-4b67-b555-70cbd3e58698}</Project>
+      <Name>IntoApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyMessageBox\MyMessageBox.csproj">
+      <Project>{28a41674-1ce8-455a-a9ff-647a0edef7a2}</Project>
+      <Name>MyMessageBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skin.Core\Skin.Core.csproj">
+      <Project>{13da6558-356b-47b9-96f2-fe4d5457cb02}</Project>
+      <Name>Skin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skin.WPF\Skin.WPF.csproj">
+      <Project>{168352b1-6a0c-4c9c-8a32-68b512da3cfc}</Project>
+      <Name>Skin.WPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Printer_Ico.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

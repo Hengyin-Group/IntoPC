@@ -1,0 +1,132 @@
+﻿<Skin:SkinSimpleWindow x:Class="IntoApp.View.AutoUpdateInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IntoApp.View"
+        xmlns:Skin="clr-namespace:Skin.WPF;assembly=Skin.WPF"
+        xmlns:Controls="clr-namespace:Skin.WPF.Controls;assembly=Skin.WPF"
+        mc:Ignorable="d"
+        x:Name="AutoUpdateWindow"
+        WindowShadowColor="#888888"
+        WindowShadowOpacity="0.4"
+        WindowShadowSize="20"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        Title="通知" Height="300" Width="400">
+    <Window.DataContext>
+        <Binding Path="Win_InformUpdate" Source="{StaticResource Locator}"/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center"
+                       Margin="0">
+                    <Controls:UseSystemMinButton
+                    Cursor="Hand"
+                    SystemButtonForeground="#646464"
+                    SystemButtonHoverColor="#C4C4C4"
+                    SystemButtonHoverForeground="White"
+                    SystemButtonSize="22"
+                    Icon="{StaticResource Icon_Min}" />
+                    <!--<Controls:UseSystemMaxButton
+                    Cursor="Hand"
+                    SystemButtonForeground="#646464"
+                    SystemButtonHoverColor="#C4C4C4"
+                    SystemButtonHoverForeground="White"
+                    SystemButtonSize="24"
+                    Icon="{StaticResource Icon_Close}"/>-->
+                    <Controls:UseSystemCloseButton
+                    Cursor="Hand"
+                    SystemButtonForeground="#646464"
+                    SystemButtonHoverColor="#C4C4C4"
+                    SystemButtonHoverForeground="White"
+                    SystemButtonSize="22" />
+
+                </WrapPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <WrapPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill">
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Image.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:6" Storyboard.TargetProperty="Source">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <BitmapImage UriSource="../Contents/image/wallhaven-342867.png" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <BitmapImage UriSource="../Contents/image/wallhaven-382944.jpg" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:4">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <BitmapImage UriSource="../Contents/image/wallhaven-734918.jpg" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                </WrapPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center"
+                       Margin="50,0,50,0">
+                    <Controls:UseButton
+                    Width="120"
+                    Height="30"
+                    Margin="5"
+                    IsDefault="True"
+                    CornerRadius="15"
+                    Command="{Binding UpdateNowCommand}">
+                        <Controls:UseButton.CommandParameter>
+                            <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                <Binding ElementName="AutoUpdateWindow"/>
+                            </MultiBinding>
+                        </Controls:UseButton.CommandParameter>
+                        <WrapPanel>
+                            <Path Width="0" Height="0" Fill="Black"
+                            Stretch="Fill"/>
+                            <Label VerticalAlignment="Center"
+                                Content="现在更新"
+                                Foreground="Black"/>
+                        </WrapPanel>
+                    </Controls:UseButton>
+                    <Controls:UseButton
+                    Width="120"
+                    Height="30"
+                    Margin="5"
+                    IsDefault="False"
+                    CornerRadius="15"
+                    Command="{Binding NextCommand}">
+                        <Controls:UseButton.CommandParameter>
+                            <MultiBinding Converter="{StaticResource MultiBindingConverter}">
+                                <Binding ElementName="AutoUpdateWindow"/>
+                            </MultiBinding>
+                        </Controls:UseButton.CommandParameter>
+                        <WrapPanel>
+                            <Path Width="0" Height="0" Fill="Black"
+                              Stretch="Fill"/>
+                            <Label VerticalAlignment="Center"
+                               Content="下次再说"
+                               Foreground="Black"/>
+                        </WrapPanel>
+                    </Controls:UseButton>
+                </WrapPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Skin:SkinSimpleWindow>
